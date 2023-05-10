@@ -1,21 +1,9 @@
 {% extends "./layout/base.twig" %}
 
-
-{% block body %}
-
- {% include 'areas/header.twig' %}
-
- {% include "sections/hero.twig" %}
-
- {% include "sections/service.twig" %}
-
- {% include "sections/news.twig" %}
-
- {% include "sections/shop.twig" %}
-
- {% include "sections/contact.twig" %}
+{% block content %}
 
 
- {% include "areas/footer.twig" %}
+    {% include 'sections/example.twig' with { args: _example } %}
+    {% include 'sections/hero.twig' with { args: _hero } %}
 
 {% endblock %}

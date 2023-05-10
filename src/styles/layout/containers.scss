@@ -1,11 +1,6 @@
 .l-container {
-  max-width: $s-content;
+  max-width: calc(var(--s-padding-x) * 2 + #{$s-inner-width});
   margin: 0 auto;
-  @include paddingResponsive($s-content-padding, x);
-  @include media-breakpoint-up(md) {
-    max-width: px-to-rem(768);
-  }
-  @include media-breakpoint-up(lg) {
-    max-width: $s-content;
-  }
+  padding-left: var(--s-padding-x);
+  padding-right: var(--s-padding-x);
 }

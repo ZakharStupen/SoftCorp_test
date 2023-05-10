@@ -1,53 +1,59 @@
-"use strict";
 import svg4everybody from 'svg4everybody';
 import scrollLock from 'scroll-lock';
+import 'focus-visible';
 
-import Header from './components/header'
-import testServerRequest from './components/test-server-request.js'
-import Validation from './components/validation.js'
-import loadMore from './components/load-more.js'
+import Header from './components/header';
 
 svg4everybody();
 
-window.app = {
-  header: null,
-  scroll: {
+class App {
+  header = null
+  mobileBreakpoint = 767.99 / 16
+  scroll = {
     disable: scrollLock.disablePageScroll,
-    enable: scrollLock.enablePageScroll
-  },
-  setInert(...args) {
-    args.forEach(item => {
-      item.setAttribute('inert', true);
-    })
-  },
-  removeInert(...args) {
-    args.forEach(item => {
-      item.removeAttribute('inert');
-    })
-  },
+    enable: scrollLock.enablePageScroll,
+  }
+
+  constructor() {
+    this.header = new Header('.js-header');
+
+    // how to init modules:
+    // this.initModule(testJSConnect, '.js-test-js-connect');
+    // this.initModule(testServerRequest, '.js-test-api');
+
+  }
 
   initModule(Module, selector) {
-    if (!!selector) {
-      let blocks = Array.prototype.slice.call(document.querySelectorAll(selector));
-      blocks.forEach(block => {
+    if (selector) {
+      const blocks = Array.prototype.slice.call(document.querySelectorAll(selector));
+      blocks.forEach((block) => {
         new Module(block);
       });
     } else {
       new Module();
     }
-  },
-
-  init () {
-    window.app.header = new Header('.js-header');
-
-    window.app.initModule(Validation, '.js-validate');
-
-    window.app.initModule(loadMore, '.js-load-more');
-
-    app.initModule(testServerRequest, '.js-test-api');
   }
 
-};
+  mobileQuery = () =>  window.matchMedia(`(max-width: ${this.mobileBreakpoint}rem)`).matches
+
+  setInert(...args) {
+    args.forEach((item) => {
+      item.setAttribute('inert', true);
+    });
+  }
+
+  removeInert(...args) {
+    args.forEach((item) => {
+      item.removeAttribute('inert');
+    });
+  }
 
 
-window.addEventListener('DOMContentLoaded', app.init);
+}
+
+
+window.addEventListener('DOMContentLoaded', () => {
+
+  window.app = new App;
+
+});

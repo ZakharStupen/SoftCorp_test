@@ -3,6 +3,7 @@
 
   "viewsDirectory" : "views",
   "externalTemplatesAtRoot" : "",
+  "mocksDirectory" : "mocks",
 
   "stylesDirectory" : "styles",
   "javascriptDirectory" : "js",
@@ -23,10 +24,11 @@
 
   "template_engine" : "twig",
   "javascript_libraries" : [],
+  "use_webpack" : true,
   "use_babel" : true,
   "minify_images" : true,
   "css_source_maps" : false,
-  "js_source_maps" : true,
+  "js_source_maps" : false,
   "concatenate_scripts" : false,
   "minify_scripts" : true,
   "critical_css" : false,

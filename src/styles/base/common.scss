@@ -6,15 +6,16 @@ html {
 body {
   font-family: $font-base;
   font-style: normal;
-  font-weight: $fw-base;
-  font-size: $fs-base;
-  line-height: $lh-base;
-  color: $c-brand;
+  font-weight: normal;
+  font-size: var(--fs-base);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background: var(--color-main-bg);
   display: flex;
   min-height: 100%;
   flex-direction: column;
   overflow-x: hidden;
-  background: $c-white;
+  justify-content: stretch;
 
   &.stop-scrolling {
     overflow: hidden;
@@ -28,6 +29,7 @@ body {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 svg {
@@ -36,24 +38,26 @@ svg {
 
 button,
 a {
-  -moz-appearance: none;
-  -webkit-appearance: none;
+  appearance: none;
   background: none;
   border: none;
   font-size: inherit;
-  text-decoration: none;
 }
 
 a {
-  color: inherit;
   transition: color 0.3s ease;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
   tap-highlight-color: transparent;
 
+  color: var(--link-color);
+  text-decoration: var(--link-underline);
+
   &:hover {
-    color: $c-brand;
+    color: var(--link-color-hover);
+    text-decoration: var(--link-underline-hover);
   }
+
   &:focus,
   &:active {
     outline: none;
@@ -75,4 +79,42 @@ label {
     -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
     tap-highlight-color: transparent;
   }
+}
+
+
+a, button {
+  &[data-focus-visible-added]:focus {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+}
+
+
+[inert] {
+  pointer-events: none;
+  cursor: default;
+}
+
+[inert], [inert] * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }

@@ -1,28 +1,14 @@
 // Sizes
-$s-content-padding: (
-  xs: px-to-rem(16),
-  md: px-to-rem(16),
-  lg: px-to-rem(50)
+
+$s-content-padding-x: (
+  xs: px-to-rem(20),
+  md: px-to-rem(40)
 );
 
 
-$s-inner-width: px-to-rem(1440);
-$s-inner-width-md: px-to-rem(768);
-$s-inner-width-xs: px-to-rem(360);
+$s-inner-width: px-to-rem(1140);
 
-$s-content: $s-inner-width + 2 * map_get($s-content-padding, lg);
-$s-content-md: $s-inner-width-md + 2 * map_get($s-content-padding, md);
-$s-content-xs: $s-inner-width-xs + 2 * map_get($s-content-padding, xs);
-
-$s-space-normal-desktop:px-to-rem(153);
-$s-space-middle-desktop:px-to-rem(96);
-$s-space-small-desktop: px-to-rem(64);
-
-$s-space-the-biggest-mobile: px-to-rem(48);
-$s-space-big-mobile:px-to-rem(40);
-$s-space-normal-mobile: px-to-rem(32);
-$s-space-middle-mobile: px-to-rem(24);
-$s-space-small-mobile: px-to-rem(20);
-$s-space-tiny:px-to-rem(8);
-
-$s-header-height: px-to-rem(100)
+$s-header-height: (
+      xs: px-to-rem(56),
+      lg: px-to-rem(76),
+);
