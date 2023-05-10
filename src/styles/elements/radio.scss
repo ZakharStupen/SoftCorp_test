@@ -1,0 +1,41 @@
+.el-radio {
+  &__input {
+    display: none;
+
+    &:checked + .el-radio__fake {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  &__fake {
+    display: inline-block;
+    width: px-to-rem(32);
+    height: px-to-rem(32);
+    border: px-to-rem(1.5) solid #C0CBC6;
+    border-radius: px-to-rem(30);
+    position: relative;
+    margin-right: px-to-rem(16);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: px-to-rem(32);
+      height: px-to-rem(32);
+      border: px-to-rem(8) solid $c-brand;
+      border-radius: px-to-rem(30);
+      background: $c-white;
+      opacity: 0;
+      transition: .3s;
+    }
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    color: $c-text;
+    cursor: pointer;
+  }
+
+}

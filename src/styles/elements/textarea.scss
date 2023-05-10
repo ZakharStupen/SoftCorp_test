@@ -1,0 +1,78 @@
+.el-textarea {
+  max-width: 100%;
+  text-align: left;
+  text-align-last: left;
+  transition: border 0.3s ease;
+  box-shadow: none;
+  width: 100%;
+  position: relative;
+  --field-text-color: #{$c-brand};
+  --field-border-color: #{$c-border};
+  color: var(--field-text-color);
+  --field-error-color: #{$c-error};
+
+  &:focus {
+    border-color: $c-accent;
+  }
+
+  &[disabled] {
+    background-color: $c-disabled;
+    -webkit-text-fill-color: $c-accent;
+  }
+
+  &::placeholder {
+    font-style: normal;
+  }
+&__field {
+  height: px-to-rem(206);
+  color: var(--field-text-color);
+  width: 100%;
+  background: transparent;
+  border-radius: $s-space-tiny;
+  outline: none;
+  resize: none;
+  padding: px-to-rem(16) $s-space-middle-mobile;
+  border: px-to-rem(1.5) solid var(--field-border-color);
+
+  &:focus {
+    color: $c-text;
+  }
+
+  &:focus ~ .el-textarea__label,
+  &:not(:placeholder-shown) ~ .el-textarea__label {
+    top: px-to-rem(-10);
+    left: px-to-rem(16);
+    font-size: px-to-rem(12);
+    background: $c-white;
+    z-index: 10;
+    padding: 0 px-to-rem(8);
+  }
+  &::placeholder {
+    visibility: hidden;
+  }
+
+}
+  &__label {
+    position: absolute;
+    top: px-to-rem(12);
+    left: px-to-rem(28);
+    z-index: -1;
+    transition: 0.3s;
+  }
+  &__error {
+
+    position: absolute;
+    bottom: -5%;
+    left: 7%;
+    color: red;
+    background: $c-white;
+    padding: 0 px-to-rem(6);
+    font-size: px-to-rem(12);
+    z-index: 8;
+    margin-bottom: .25rem;
+  }
+  &.is-invalid {
+    --field-text-color: var(--field-error-color);
+    --field-border-color: var(--field-error-color);
+  }
+}

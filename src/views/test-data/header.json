@@ -1,0 +1,87 @@
+{
+  "main_menu": [
+    {
+      "url": "examples.html",
+      "classes": "",
+      "is_active": false,
+      "title": "Home"
+    },
+    {
+      "url": "#",
+      "classes": "",
+      "is_active": false,
+      "title": "About us"
+    },
+    {
+      "url": "#",
+      "classes": "",
+      "is_active": false,
+      "title": "Our service"
+    },
+    {
+      "url": "#",
+      "classes": "",
+      "is_active": false,
+      "title": "Pricing"
+    },
+    {
+      "url": "#",
+      "classes": "",
+      "is_active": false,
+      "title": "Item",
+      "submenus": [
+        {
+          "url": "#",
+          "is_active": false,
+          "classes": "",
+          "title": "Support"
+        },
+        {
+          "url": "#",
+          "is_active": false,
+          "classes": "",
+          "title": "Support"
+        },
+        {
+          "url": "#",
+          "is_active": false,
+          "classes": "",
+          "title": "Support"
+        },
+        {
+          "url": "#",
+          "is_active": false,
+          "classes": "",
+          "title": "Support"
+        },
+        {
+          "url": "#",
+          "is_active": false,
+          "classes": "",
+          "title": "Support"
+        }
+      ]
+    }
+  ],
+  "menu_extra": [
+    {
+      "url": "#",
+      "classes": "",
+      "is_active": false,
+      "title": "Login"
+    },
+    {
+      "url": "#",
+      "classes": "header-nav__link--btn",
+      "is_active": false,
+      "title": "Sign Up"
+    }
+  ],
+  "site_logo": {
+    "url": "",
+    "alt": ""
+  },
+  "menu_text" : {
+    "text": "menu"
+  }
+}

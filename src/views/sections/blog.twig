@@ -1,0 +1,110 @@
+{% if not args %}
+    {% set args = {
+        title: 'Blog',
+        list: [{
+            image: {
+                src: '/images/blog1.jpg',
+                alt: 'photo',
+            },
+            title: 'Title 1',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sit et laoreet urna turpis integer tortor, mus...',
+            link: {
+                text: 'Read',
+                url: '#',
+            },
+        },
+            {
+                image: {
+                src: '/images/blog2.jpg',
+                alt: 'photo',
+            },
+                title: 'Title 2',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sit et laoreet urna turpis integer tortor, mus...',
+                link: {
+                text: 'Read',
+                url: '#',
+            },
+            },
+            {
+                image: {
+                src: '/images/blog3.jpg',
+                alt: 'photo',
+            },
+                title: 'Title 3',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sit et laoreet urna turpis integer tortor, mus...',
+                link: {
+                text: 'Read',
+                url: '#',
+            },
+            },
+            {
+                image: {
+                src: '/images/blog4.jpg',
+                alt: 'photo',
+            },
+                title: 'Title 4',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sit et laoreet urna turpis integer tortor, mus...',
+                link: {
+                text: 'Read',
+                url: '#',
+            },
+            },
+        ],
+            button: 'Load More',
+            have_more_pages: 1,
+            matrixBlockId: 85567,
+            targetContainerId: 'test-id-12343434',
+            moreAjaxUrl: './ajax-requests/load-more-test.json',
+            categoryId: 123434,
+    } %}
+{% endif %}
+
+<section class="s-blog">
+    <div class="s-blog__container"  >
+        {% if args.title %}
+             <h2 class="s-blog__title el-title-2">
+                 {{ args.title }}
+             </h2>
+        {% endif %}
+        <div class="s-blog__wrapper" id="{{ args.targetContainerId }}">
+            {% for items in args.list %}
+                <div class="s-blog__card" >
+                    {% if items.image %}
+                        <div class="s-blog__media">
+                            <img src="{{ items.image.src }}" alt="{{ items.image.src }}">
+                        </div>
+                    {% endif %}
+                    {% if items.title %}
+                        <h3 class="s-blog__headline el-title-3">
+                            {{ items.title }}
+                        </h3>
+                    {% endif %}
+                    {% if items.text %}
+                        <div class="s-blog__description">
+                            {{ items.text }}
+                        </div>
+                    {% endif %}
+                    {% if items.link %}
+                        <a class="s-blog__link" href="{{ items.link.url }}">
+                            {{ items.link.text }}
+                        </a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        {% if args.button and args.have_more_pages%}
+            <div class="s-blog__button">
+                <button class="btn js-load-more"
+                        data-load-more="{{ args.moreAjaxUrl }}"
+                        data-category-id="{{ args.categoryId }}"
+                        data-target-container-id="{{ args.targetContainerId }}"
+                        data-matrix-block-id="{{ args.matrixBlockId }}"
+                        type="button"
+                >
+                    {{ args.button }}
+                </button>
+            </div>
+        {% endif %}
+
+    </div>
+</section>

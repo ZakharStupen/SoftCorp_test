@@ -1,0 +1,135 @@
+.s-form {
+  margin-top: $s-header-height + $s-space-middle-desktop;
+  padding-bottom: $s-space-small-desktop;
+  &__container {
+    @extend .l-container;
+
+  }
+
+  &__subscribe.is-sent-success & {
+    &__form {
+      display: none;
+    }
+    &__success {
+      display: block;
+    }
+
+  }
+
+
+  &__title {
+    margin-bottom: px-to-rem(56);
+    width: 100%;
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: px-to-rem(40);
+    position: relative;
+  }
+
+  &__field {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: px-to-rem(56);
+    &--half {
+      width: 100%;
+    }
+  }
+
+
+  &__subtitle {
+    font-size: $fs-base;
+    margin-bottom: px-to-rem(32);
+    color: $c-text;
+    font-weight: 400;
+    width: 100%;
+  }
+
+
+
+
+  &__checked {
+    margin-bottom: px-to-rem(32);
+    width: 100%;
+
+  }
+
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    width: 100%;
+    &:not(:last-child) {
+      margin-bottom: px-to-rem(32);
+    }
+  }
+
+  &__success {
+    display: none;
+    font-size: px-to-rem(26);
+    color: $c-accent;
+    h4 {
+      margin-bottom: px-to-rem(84);
+    }
+    ul {
+      list-style-position: inside;
+      & li {
+        &:last-child {
+          margin-top: px-to-rem(16);
+        }
+      }
+    }
+  }
+  &__error {
+    color: $c-error;
+    position: absolute;
+    bottom: 0;
+  }
+
+
+  @include media-breakpoint-up(sm) {
+    &__field {
+      &--half {
+        width: 45%;
+      }
+    }
+    &__checked {
+      width: 50%;
+    }
+
+    &__btn {
+      width: 45%;
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+
+    &__checked {
+      width: 25%;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &__form {
+      width: 50%;
+    }
+  }
+}

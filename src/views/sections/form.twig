@@ -1,0 +1,368 @@
+{% if not args %}
+    {% set args = {
+        title: 'Send Us a Message',
+        form : {
+            firs_name: {
+                label: 'First Name',
+                name: 'First Name',
+                type: 'text',
+            },
+            last_name: {
+                label: 'Last Name',
+                name: 'Last Name',
+                type: 'text',
+            },
+            subject: {
+                label: 'Email subject',
+                name: 'Email Subject',
+            option:[
+                    {
+                        text: 'subject item 1'
+                    },
+                    {
+                        text: 'subject item 2'
+                    },
+                    {
+                        text: 'subject item 3'
+                    },
+                    {
+                        text: 'subject item 4'
+                    },
+                ],
+            },
+            phone: {
+                label: 'Phone',
+                name: 'Phone',
+                type: 'number'
+            },
+            textarea: {
+                label: 'Message',
+                type: 'Text',
+                name: 'Message'
+            },
+            address: {
+                label: 'Address',
+                name: 'Address',
+                type: 'text',
+            },
+            dilivery: {
+                label: 'Dilivery',
+                name: 'Dilivery',
+                option:[
+                    {
+                        text: 'delivery to address'
+                    },
+                    {
+                        text: 'pickup'
+                    },
+                    {
+                        text: 'without delivery'
+                    },
+                ],
+            },
+
+            FavoriteOptions: {
+            label: 'Choose favorite option:',
+            name: 'Favorite option',
+            type: 'radio',
+            options: [
+                {
+                    text: 'Option 1'
+                },
+                {
+                    text: 'Option 2'
+                },
+                {
+                    text: 'Option 3'
+                },
+                {
+                    text: 'Option 4'
+                },
+            ],
+        },
+
+            SuitableOptions: {
+                label: 'Choose all suitable options :',
+                name: 'Suitable options',
+                type: 'checkbox',
+                options: [
+                    {
+                        text: 'Option 1'
+                    },
+                    {
+                        text: 'Option 2'
+                    },
+                    {
+                        text: 'Option 3'
+                    },
+                    {
+                        text: 'Option 4'
+                    },
+                    {
+                        text: 'Option 5'
+                    },
+                    {
+                        text: 'Option 6'
+                    },
+                    {
+                        text: 'Option 7'
+                    },
+                    {
+                        text: 'Option 8'
+                    },
+                ],
+            },
+
+            privacy: {
+                label: 'I agree to the <a href="#">terms </a> and <a href="#">privacy policy </a>',
+                type: 'checkbox',
+                name: 'privacy',
+            },
+            mail: {
+                label: 'Please add me to mailing list for news.',
+                type: 'checkbox',
+                name: 'mail',
+            },
+            button: {
+                BtnCancel: 'Cancel',
+                BtnSubmit: 'Submit',
+            },
+
+            success_message: 'Thank you for submitting the form.',
+            description: 'Here are your answers:',
+        },
+    } %}
+{% endif %}
+
+<section class="s-form">
+    <div class="s-form__container" >
+        <div class="s-form__subscribe js-validate">
+        <form class="s-form__form" name="contact"   data-form-container>
+            {% if args.title %}
+                <h2 class="s-form__title el-title-2">
+                    {{ args.title }}
+                </h2>
+            {% endif %}
+
+            <div class="s-form__field s-form__field--half el-field" data-field>
+                <input
+                        class="el-field__input"
+                        type="{{ args.form.firs_name.type }}"
+                        name="{{ args.form.firs_name.name }}"
+                        placeholder=" {{ args.form.firs_name.label }}"
+                        data-validate = 'name|required'
+                        data-validate-as = 'First Name'
+                        data-field-value
+                        id="FirstName">
+                <span class="el-field__error" >
+                            <span data-validate-mess></span>
+                        </span>
+                <label class="el-field__label" for="FirstName">
+                    {{ args.form.firs_name.label }}
+                </label>
+            </div>
+                <div class="s-form__field s-form__field--half el-field" data-field>
+                    <input class="el-field__input"
+                           type="{{ args.form.last_name.label.type }}"
+                           name="{{ args.form.last_name.name }}"
+                           placeholder=" {{ args.form.last_name.label }}"
+                           data-validate = 'name|required'
+                           data-validate-as = 'Last Name'
+                           data-field-value
+                           id="LastName"
+                    >
+                    <span class="el-field__error">
+                         <span data-validate-mess></span>
+                    </span>
+                    <label class="el-field__label" for="LastName">
+                        {{ args.form.last_name.label }}
+                    </label>
+                </div>
+
+
+                <div class="s-form__field s-form__field--half el-select" data-field>
+                    <select class="el-select__field" id="ContactSubject"
+                            name="{{ args.form.subject.name }}"
+                            placeholder="{{ args.form.subject.label }}"
+                            data-validate = 'select|required'
+                            data-validate-as = 'Option'
+                            data-field-value>
+                        <option class="el-select__option"  disabled selected hidden>
+                            {{ args.form.subject.label }}
+                        </option>
+                        {% for items in args.form.subject.option %}
+                    <option>
+                        {{ items.text }}
+                    </option>
+                        {% endfor %}
+                    </select>
+                    <span class="el-select__error" >
+                            <span data-validate-mess></span>
+                        </span>
+
+                </div>
+            <div class="s-form__field s-form__field--half el-field" data-field>
+                <input class="el-field__input"
+                       type="text"
+                       name="{{ args.form.phone.type }}"
+                       placeholder=" {{ args.form.phone.label }}"
+                       data-validate = 'phone'
+                       data-validate-as = 'Phone'
+                       data-field-value
+                       id="phone"
+                       id="phone"
+                >
+                <span class="el-field__error">
+                        <span data-validate-mess></span>
+                    </span>
+                <label class="el-field__label" for="number">
+                    {{ args.form.phone.label }}
+                </label>
+            </div>
+            <div class="s-form__field  el-textarea" data-field>
+                <textarea class="el-textarea__field " placeholder=" {{ args.form.textarea.label }}" data-validate = 'message|required' data-validate-as = 'Message' id="message" name="{{ args.form.textarea.label }}" type="{{ args.form.textarea.type }} " data-field-value></textarea>
+                <span class="el-textarea__error">
+                         <span data-validate-mess></span>
+                    </span>
+                <label class="el-textarea__label" for="message">
+                    {{ args.form.textarea.label }}
+                </label>
+            </div>
+
+               <div class="s-form__field el-field" data-field>
+                <input class="el-field__input"
+                       type="{{ args.form.address.label.type }}"
+                       name="{{ args.form.address.name }}"
+                       placeholder=" {{ args.form.address.label }}"
+                       data-validate = 'address|required'
+                       data-validate-as = 'Address'
+                       data-field-value
+                       id="Address"
+                >
+                <span class="el-field__error">
+                         <span data-validate-mess></span>
+                    </span>
+                <label class="el-field__label" for="Address">
+                    {{ args.form.address.label }}
+                </label>
+            </div>
+               <div class="s-form__field s-form__field--half el-select" data-field>
+                <select class="el-select__field" id="dilivery" name="{{ args.form.dilivery.name }}" placeholder="{{ args.form.dilivery.label }} "  data-validate = 'name'
+                        data-validate-as = 'Option'  data-field-value>
+                    <option class="el-select__option">
+                        {{ args.form.dilivery.label }}
+                    </option>
+                    {% for items in args.form.dilivery.option %}
+                        <option>
+                            {{ items.text }}
+                        </option>
+                    {% endfor %}
+                </select>
+                   <span class="el-select__error">
+                         <span data-validate-mess></span>
+                    </span>
+
+            </div>
+                <div class="s-form__row" data-field>
+                {% if args.form.FavoriteOptions %}
+                    <h4 class="s-form__subtitle">
+                        {{ args.form.FavoriteOptions.label }}
+                    </h4>
+                        {% for items in args.form.FavoriteOptions.options %}
+                            <div class="s-form__checked el-radio">
+                                <label class="el-radio__label">
+                                <input class="el-radio__input" type="{{ args.form.FavoriteOptions.type }}"  name="{{ args.form.FavoriteOptions.name }}" value="{{ items.text }}" data-validate = 'required' data-field-value>
+                                    <span class="el-radio__fake"></span>
+                                    <span data-text>
+                                        {{ items.text }}
+                                    </span>
+                                </label>
+                            </div>
+
+                        {% endfor %}
+                    {% endif %}
+                    <span class="s-form__error" >
+                            <span data-validate-mess></span>
+                        </span>
+                </div>
+                <div class="s-form__row el-checkbox" data-field>
+                {% if args.form.SuitableOptions %}
+                    <h4 class="s-form__subtitle">
+                        {{ args.form.SuitableOptions.label }}
+                    </h4>
+
+                        {% for items in args.form.SuitableOptions.options %}
+                            <div class="s-form__checked el-checkbox">
+                                <label class="el-checkbox__label">
+                                <input class="el-checkbox__input" data-field-value name="{{ args.form.SuitableOptions.name }}"  type="{{ args.form.SuitableOptions.type }}" value="{{ items.text }} "  data-validate = 'suitable|required'>
+           <span class="el-checkbox__fake"></span>
+                                    <span data-text>
+                                        {{ items.text }}
+                                    </span>
+                                </label>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    <span class="s-form__error" >
+                            <span data-validate-mess></span>
+                        </span>
+               </div>
+                {% if args.form.privacy %}
+                <div class="s-form__field el-checkbox" data-field>
+                    <label class="el-checkbox__label" for="PrivacyPolicy">
+                        <input class="el-checkbox__input" type="{{ args.form.privacy.type }}"  name="{{ args.form.privacy.name }}" id="PrivacyPolicy" data-validate = 'checkif|required' data-field-value >
+                        <span class="el-checkbox__fake"></span>
+                        <span>
+                                        {{ args.form.privacy.label }}
+                                    </span>
+                    </label>
+                    <span class="el-checkbox__error" >
+                            <span data-validate-mess></span>
+                        </span>
+                </div>
+
+            {% endif %}
+
+
+            {% if args.form.mail %}
+
+                    <div class="s-form__field el-checkbox" data-field>
+                        <label class="el-checkbox__label">
+                            <input class="el-checkbox__input" type="{{ args.form.mail.type }}"  name="{{ args.form.mail.name }}" data-field-value data-mail>
+                            <span class="el-checkbox__fake"></span>
+                            <span>
+                                        {{ args.form.mail.label }}
+                                    </span>
+                        </label>
+                        <span class="s-checkbox__error" >
+                            <span data-validate-mess></span>
+                        </span>
+                    </div>
+            {% endif %}
+            <div class="s-form__buttons">
+            {% if args.form.button %}
+                    {% if args.form.button.BtnCancel %}
+                        <button class="s-form__btn btn" type="reset" data-button-cancel>
+                            {{ args.form.button.BtnCancel }}
+                        </button>
+                    {% endif %}
+                    {% if args.form.button.BtnSubmit %}
+                        <button class="s-form__btn btn" type="submit">
+                            {{ args.form.button.BtnSubmit }}
+                        </button>
+                    {% endif %}
+            {% endif %}
+            </div>
+        </form>
+        <div class="s-form__success" data-form-success>
+            <h4 aria-role="alert">
+                {{ args.form.success_message }}
+            </h4>
+            <p>
+                {{ args.form.description }}
+            </p>
+            <ul data-results-input></ul>
+        </div>
+        </div>
+    </div>
+</section>

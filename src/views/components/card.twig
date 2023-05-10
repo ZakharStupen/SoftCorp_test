@@ -1,0 +1,24 @@
+<div class="c-card">
+<div class="c-card__items">
+    {% if items.image %}
+        <img class="c-card__img" src="{{ items.image.src }}" alt="{{ items.image.alt }}">
+    {% endif %}
+    {% if items.title %}
+        <h4 class="c-card__title el-title-3">
+            {{ items.title }}
+        </h4>
+    {% endif %}
+    {% if items.text %}
+        <p class="c-card__text ">
+            {{ items.text }}
+        </p>
+    {% endif %}
+
+        {% if items.link %}
+                <a href="items.link.href" class="c-card__link ">
+                        {{ items.link.text }}
+                </a>
+        {% endif %}
+
+</div>
+</div>

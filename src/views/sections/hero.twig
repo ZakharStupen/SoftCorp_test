@@ -1,0 +1,42 @@
+{% if not args %}
+    {% set args = {
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        button: 'Button',
+        image: {
+            src: "/images/hero-img.svg",
+            alt: 'image',
+        },
+
+    } %}
+{% endif %}
+
+<section class="s-hero">
+    <div class="s-hero__container">
+        <div class="s-hero__content">
+            <div class="s-hero__description">
+                {% if args.title %}
+                    <h2 class="s-hero__title el-title-1">
+                        {{ args.title }}
+                    </h2>
+                {% endif %}
+                {% if args.text %}
+                    <p class="s-hero__text el-title-2">
+                        {{ args.text }}
+                    </p>
+                {% endif %}
+                {% if args.button %}
+                    <button class="s-hero__button btn">
+                        {{ args.button }}
+                    </button>
+                {% endif %}
+
+            </div>
+            <div class="s-hero__image">
+                {% if args.image %}
+                <img class="s-hero__image-img" src="{{ args.image.src}}" alt="{{ args.image.alt }}">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

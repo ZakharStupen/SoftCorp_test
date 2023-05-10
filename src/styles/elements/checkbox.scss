@@ -1,0 +1,48 @@
+.el-checkbox {
+  position: relative;
+  &__input {
+    display: none;
+
+    &:checked + .el-checkbox__fake {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  &__error {
+    color: $c-error;
+    position: absolute;
+    bottom: px-to-rem(-32);
+  }
+  &__fake {
+    display: inline-block;
+    width: px-to-rem(32);
+    height: px-to-rem(32);
+    border: px-to-rem(1.5) solid #C0CBC6;
+    position: relative;
+    border-radius: px-to-rem(10);
+    margin-right: px-to-rem(16);
+    flex-shrink: 0;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: .3s;
+      background: url("/images/checked_background.svg") no-repeat $c-brand;
+      border-radius: px-to-rem(10);
+      width: px-to-rem(32);
+      height: px-to-rem(32);
+      background-position: center;
+    }
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    color: $c-text;
+    cursor: pointer;
+
+  }
+}

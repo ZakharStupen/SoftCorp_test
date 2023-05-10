@@ -1,0 +1,20 @@
+@mixin aspect-ratio($percentual-height) {
+	// Wrapper
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+
+	&:before {
+		padding-top: $percentual-height;
+		content: '';
+		display: block;
+	}
+	// Content
+	> * {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+}

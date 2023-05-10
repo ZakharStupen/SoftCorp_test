@@ -1,0 +1,94 @@
+{% if not args %}
+    {% set args = {
+        title: 'Shop',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et elit at mi sapien in ac. Amet at morbi eget maecenas sit urna ipsum feugiat. Interdum leo pulvinar integer sed aliquet. Id aliquam in ligula fermentum, ornare adipiscing massa mi est. Tristique quis pellentesque nec, eu fermentum vivamus. Malesuada vel vel leo orci, maecenas amet. Facilisis pellentesque at mattis porttitor pellentesque nullam sit. Nulla sed magna mattis phasellus eget hac.',
+        button: 'View More',
+        list: [{
+            image: {
+                src: '/images/shop1.jpg',
+                alt: 'photo',
+            },
+            price: '39$',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sit et laoreet urna turpis integer tortor, mus.',
+            link: {
+                link_url: '#',
+                link_text: 'Buy',
+            },
+        },
+            {
+                image: {
+                src: '/images/shop2.jpg',
+                alt: 'photo',
+            },
+                price: '49$',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sit et laoreet urna turpis integer tortor, mus.',
+                link: {
+                link_url: '#',
+                link_text: 'Buy',
+            },
+            },
+            {
+                image: {
+                src: '/images/shop3.jpg',
+                alt: 'photo',
+            },
+                price: '59$',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sit et laoreet urna turpis integer tortor, mus. ',
+                link: {
+                link_url: '#',
+                link_text: 'Buy',
+            },
+            },
+
+        ]
+    } %}
+{% endif %}
+
+
+<section class="s-shop">
+    <div class="s-shop__container">
+        {% if args.title %}
+            <h3 class="s-shop__title el-title-2">
+                {{ args.title }}
+            </h3>
+        {% endif %}
+        {% if args.text %}
+            <p class="s-shop__text">
+                {{ args.text }}
+            </p>
+        {% endif %}
+        <div class="s-shop__cards">
+            {% for items in args.list %}
+                <div class="s-shop__items">
+                    {% if items.image %}
+                        <img class="s-shop__img" src="{{ items.image.src }}" alt="{{ items.image.alt }}">
+                    {% endif %}
+                    {% if items.text %}
+                        <p class="s-shop__text ">
+                            {{ items.text }}
+                        </p>
+                    {% endif %}
+                    {% if items.price %}
+                        <h4 class="s-shop__price el-title-3">
+                            {{ items.price }}
+                        </h4>
+                    {% endif %}
+                    {% if items.link %}
+                        <a href="{{ items.link.link_url }}" class="s-shop__link btn">
+                            {{ items.link.link_text }}
+                        </a>
+                    {% endif %}
+                </div>
+
+            {% endfor %}
+
+        </div>
+        <div class="s-shop__button">
+            {% if args.button %}
+                <button class="btn">
+                    {{ args.button }}
+                </button>
+            {% endif %}
+        </div>
+    </div>
+</section>
