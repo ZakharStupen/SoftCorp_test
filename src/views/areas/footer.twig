@@ -1,6 +1,178 @@
+{% if not args %}
+    {% set args = {
+        menu: [{
+            item: {
+                link_text: 'Home',
+                link_url: '#',
+            },
+        },
+            {
+                item: {
+                link_text: 'Shop',
+                link_url: '#',
+            },
+            },
+            {
+                item: {
+                link_text: 'About Us',
+                link_url: '#',
+            },
+            },
+            {
+                item: {
+                link_text: 'Our team',
+                link_url: '#',
+            },
+            },
+            {
+                item: {
+                link_text: 'Our service',
+                link_url: '#',
+            },
+            },
+            {
+                item: {
+                link_text: 'Contacts',
+                link_url: '#',
+            },
+            },
+            {
+                item: {
+                link_text: 'Pricing',
+                link_url: '#',
+            },
+            },
+        ],
+        form: {
+            image: {
+                src: '/images/letter.svg',
+                alt: 'photo',
+            },
+            title: 'Subscribe Our News',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            email_label: 'Your email',
+            button: 'Send',
+        },
+        copy_text: '© 2020 Themeforest Template. All Rights Reserved',
+        logo: {
+            src: '/images/logo.svg',
+            alt: 'logo',
+        },
+        social: [
+            {
+                link_url: '#',
+                image: {
+                src: '/images/linkedin.svg',
+                alt: 'linkedin',
+            },
+            },
+            {
+                link_url: '#',
+                image: {
+                src: '/images/instagram.svg',
+                alt: 'instagram',
+            },
+            },
+            {
+                link_url: '#',
+                image: {
+                src: '/images/twitter.svg',
+                alt: 'twitter',
+            },
+            },
+            {
+                link_url: '#',
+                image: {
+                src: '/images/facebook.svg',
+                alt: 'facebook',
+            },
+            },
+        ]
+    } %}
+{% endif %}
 
 <footer class="footer">
+    <div class="footer__container">
+        <div class="footer__wrapper">
+            <ul class="footer__menu">
+                {% for items in args.menu %}
+                    {% if items.item %}
+                        <li class="footer__item">
+                            <a href="items.item.link_url" class="footer__link">
+                                {{ items.item.link_text }}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            {% if args.form %}
+            <div class="footer__subscribe">
+                {% if args.form.image %}
+                    <div class="footer__media">
+                        <img src="{{ args.form.image.src }}" alt="{{ args.form.image.alt }}">
+                    </div>
+                    <div class="footer__inner">
+                        {% if args.form.title %}
+                            <h2 class="footer__title el-title-3">
+                                {{ args.form.title }}
+                            </h2>
+                        {% endif %}
+                        {% if args.form.description %}
+                            <div class="footer__description">
+                                {{ args.form.description }}
+                            </div>
+                        {% endif %}
+                        <form class="footer__form">
+                            {% if args.form.email_label %}
+                            <div class="el-field footer__input"  data-field>
+                                <input type="text"
+                                       value=""
+                                       placeholder="{{ args.form.email_label }}"
+                                       name="email"
+                                       class="el-field__input footer__email"
+                                       data-validate="email"
+                                       id="email"
+                                       autocorrect="off" autocapitalize="off">
+                                <span class="el-field__error"></span>
+                                <label class="el-field__label hidden">
+                                    {{ args.form.email_label }}
+                                </label>
 
-{# {{ footer_args | json_encode }}#}
-
+                            </div>
+                            {% endif %}
+                            {% if args.form.button %}
+                                <div class="footer__button">
+                                    <button class="footer__submit btn">
+                                        {{ args.form.button }}
+                                    </button>
+                                </div>
+                            {% endif %}
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="footer__wrap">
+            {% if args.copy_text %}
+                <div class="footer__copy">
+                    {{ args.copy_text }}
+                </div>
+            {% endif %}
+            {% if args.logo %}
+                <div class="footer__logo">
+                    <img src="{{ args.logo.src }}" alt="{{ args.logo.alt }}">
+                </div>
+            {% endif %}
+            {% if args.social %}
+                <div class="footer__social">
+                {% for items in args.social %}
+                    <a href="{{ items.link_url }}" class="footer__link">
+                        <img src="{{ items.image.src }}" alt="{{ items.image.alt }}">
+                    </a>
+                {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
 </footer>

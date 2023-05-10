@@ -1,22 +1,24 @@
 // Typography
 
-// Fonts:
-$font-base: 'Montserrat', sans-serif;
-
-
 // Font sizes:
-
 $fs-base: px-to-rem(16);
+$fs-title-1: px-to-rem(56);
+$fs-title-2: px-to-rem(32);
+$fs-title-3: px-to-rem(26);
 
-$fs-text:(
-    xs: px-to-rem(16),
-    md: px-to-rem(18),
-);
+// Font weight
 
-$fs-title-1: (
-        xs: px-to-rem(36),
-        md: px-to-rem(44),
-        xl: px-to-rem(48)
-);
+$fw-base: 400;
+$fw-title-1: 600;
 
-$fs-title-2: px-to-rem(24);
+// Line height
+
+$lh-base: 1.6;
+$lh-title-1: 1.2;
+$lh-title-3: 1.4;
+
+
+// Fonts
+$font-base: 'Mulish', sans-serif;
+
+

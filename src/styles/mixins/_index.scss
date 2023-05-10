@@ -4,10 +4,10 @@
 
 // mixins:
 @import "breakpoints";
+@import "aspect-ratio";
 @import "padding-responsive";
 @import "typographics";
-@import "load-font-family";
-@import "property-responsive";
+@import "image-fit";
 
 
 //icons sprites

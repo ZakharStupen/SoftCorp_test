@@ -4,43 +4,49 @@
 
 
 // Base
-@import "animations/dropdown";
-
 @import "base/reset";
-@import "base/fonts";
-@import "base/root";
 @import "base/common";
-
-@import "animations/hide-dropdown";
-@import "animations/show-dropdown";
-
+@import "base/fonts";
+//@import "sprites/png-sprite";
 //@import "sprites/svg-sprite";
 //@import "sprites/svg-sprite-inline";
 
 @import "layout/containers";
-@import "layout/images";
+@import "layout/typographics";
 
 // Elements
 @import "elements/icons";
 @import "elements/btn";
 @import "elements/title";
-@import "elements/subtitle";
 @import "elements/wysiwyg";
 @import "elements/field";
+@import "elements/radio";
+@import "elements/checkbox";
+@import "elements/select";
+@import "elements/textarea";
 
 
-// components
-
-// header / footer / modals and other: ?
+//areas
 @import "areas/header";
 
+// components
+@import "components/card";
 // sections
-@import "sections/example";
+@import "sections/hero";
+@import "sections/service";
+@import "sections/article";
+@import "sections/form";
+@import "sections/contact";
+@import "sections/shop";
+@import "sections/blog";
+@import "sections/news";
 
 // templates
 @import "templates/base";
 
+// areas
+@import "areas/footer";
+
 
 // bootstrap helpers
-// disable if useless
 @import "utilities/utilities";

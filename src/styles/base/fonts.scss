@@ -1,8 +1,16 @@
-/*
- Examples:
-
- @include loadFontFamily($name:'Rubik', $path: '../fonts/Rubik-Bold', $weight: bold);
-
- @include loadFontFamily($name:'Rubik', $path: '../fonts/Rubik-Light', $weight: 300, $style: 'normal');
-
-*/
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Mulish-Regular.woff2") format("woff2"),
+  url("../fonts/Mulish-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/Mulish-Bold.woff2") format("woff2"),
+  url("../fonts/Mulish-Bold.woff") format("woff");
+}

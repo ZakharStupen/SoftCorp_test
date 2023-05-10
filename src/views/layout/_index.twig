@@ -1,43 +1,23 @@
 <!doctype html>
-<html {{ site.language_attributes }}>
+<html lang="en">
 <head>
-    <meta charset="{{ site.charset }}">
-    <meta name="description" content="{{ site.description }}">
+    <meta charset="UTF-8">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,600&display=swap" rel="stylesheet">
-
+    <link rel="preload" href="../../fonts/Mulish-Bold.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="../../fonts/Mulish-Regular.woff2" as="font" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <title>{% block title %}{% endblock %}</title>
-
-    {% block styles %}
-        {# preload example:
-                styles:
-            <link rel="preload" href="{{ frontend_public_url }}/styles/style.css{{ stylesFileUrl }}" as="style">
-
-                fonts:
-            <link rel="preload" href="{{ frontend_public_url }}/fonts/Berthold-akzidenz-grotesk-be-light.woff" as="font" crossorigin="anonymous">
-
-                javascript
-            <link rel="preload" href="{{ frontend_public_url }}/js/scripts.js" as="script">
-        #}
-
-        <link rel="stylesheet" type="text/css" href="{{ frontend_public_url }}/styles/style.css">
-
-    {% endblock %}
-
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
-
-<body class="{{ body_class }} {{ template_class is defined ? template_class }}">
-
+<body class="body {{ body_class }}">
 {% block template %}
 
     {% include 'areas/header.twig' %}
 
     <main class="{{ main_class }}">
 
-    {{ content is defined ? content }}
+        {{ content is defined ? content }}
 
     </main>
 
@@ -46,10 +26,8 @@
 {% endblock %}
 
 
-
 {% block scripts %}
-    <script src="{{ frontend_public_url }}/js/scripts.js"></script>
+    <script src="./js/scripts.js"></script>
 {% endblock %}
-
 </body>
 </html>

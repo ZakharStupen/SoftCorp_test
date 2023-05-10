@@ -1,5 +1,5 @@
 module.exports = [
-  './gulp/src/error-handler',
+  './gulp/src/errorHandler',
   './gulp/src/tasks/templates',
   './gulp/src/tasks/clean',
   './gulp/src/tasks/styles',
@@ -10,6 +10,5 @@ module.exports = [
   './gulp/src/tasks/images-minify',
   './gulp/src/tasks/copy',
   './gulp/src/tasks/svg',
-  './gulp/src/tasks/critical-css',
-  './gulp/src/tasks/es-lint',
+  './gulp/src/tasks/critical-css'
 ];

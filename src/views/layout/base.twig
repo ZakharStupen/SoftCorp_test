@@ -1,18 +1,10 @@
-{% set template_class = "t-base" %}
-{% set main_class = template_class ~ '__main' %}
-
-{% extends "layout/_index.twig" %}
-
+{% extends "../layout/_index.twig" %}
 {% block template %}
-    {% include 'areas/header.twig' %}
 
-    <main class="{{ main_class }}">
-        {% block content %}
-            {{ content is defined ? content }}
+    <main class="t-base">
+        {% block body %}
+
+            content
         {% endblock %}
     </main>
-
-    {% include 'areas/footer.twig' %}
-
-
 {% endblock %}

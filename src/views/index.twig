@@ -1,20 +1,21 @@
 {% extends "./layout/base.twig" %}
 
-{% block content %}
+
+{% block body %}
+
+ {% include 'areas/header.twig' %}
+
+ {% include "sections/hero.twig" %}
+
+ {% include "sections/service.twig" %}
+
+ {% include "sections/news.twig" %}
+
+ {% include "sections/shop.twig" %}
+
+ {% include "sections/contact.twig" %}
 
 
-    <div class="s-example">
-        <div class="s-example__container">
-            <h1 class="el-title">
-                HTML Starter KIT
-            </h1>
-
-            <a href="/examples.html" class="btn">
-                Check Examples
-                {% include "elements/icon.twig"  with { name: "ic-angle-right", not_element: true, modifier: "btn__icon" } %}
-            </a>
-
-        </div>
-    </div>
+ {% include "areas/footer.twig" %}
 
 {% endblock %}
