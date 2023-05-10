@@ -1,0 +1,4 @@
+{
+  "title": "<h1>Well Done!</h1>",
+  "message": "<h2>You have just got a fetch response!</h2> <p>Replace the content of the file width object what you need and test your API requests in development mode</p>"
+}

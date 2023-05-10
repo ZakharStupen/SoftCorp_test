@@ -1,0 +1,12 @@
+
+@mixin fontSizeResponsive($fontSizeList){
+  @if (type-of($fontSizeList) == 'map') {
+    @each $breakpoint, $fontSize in $fontSizeList {
+      @include media-breakpoint-up( $breakpoint) {
+        font-size: $fontSize;
+      }
+    }
+  } @else {
+    font-size: $fontSizeList;
+  }
+}

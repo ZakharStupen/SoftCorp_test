@@ -1,0 +1,8 @@
+{
+  "title": "Using Mock data",
+  "description": "<p> It's an example of using mock files for Twig data. </p> <p>Data object for this section you can find in the src/views/mocks/example.json.</p> <p>all mock variables start from <mark>_</mark> so if you need variable <mark>_blog</mark> create a new json file <mark>blog.json</mark>. If you add a new folder in the mock directory (mock/news/article.json) this data will be available in templates via _news.article",
+  "link": {
+    "text": "Find out more",
+    "url": "https://wiki.effective-soft.com/display/ESHTML/Mock+data+for+twig+templates"
+  }
+}

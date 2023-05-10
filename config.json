@@ -1,0 +1,36 @@
+{
+  "environment" : "development",
+
+  "viewsDirectory" : "views",
+  "externalTemplatesAtRoot" : "",
+  "mocksDirectory" : "mocks",
+
+  "stylesDirectory" : "styles",
+  "javascriptDirectory" : "js",
+  "pngSpriteDirectory" : "images/png_sprite",
+  "imagesDirectory" : "images",
+  "fontsDirectory" : "fonts",
+  "ajaxDirectory": "ajax-requests",
+  "svgSpriteDirectory" : "images/svg_sprite",
+  "svgInlineSpriteDirectory" : "images/svg_sprite_inline",
+  "criticalDirectory" : "critical",
+
+  "sourcePath" : "src",
+  "temporaryPath" : ".tmp",
+
+  "destinationPath" : "public",
+  "ignoreWhenPublicClean" : [],
+  "allowCleanOutsideFrontend": false,
+
+  "template_engine" : "twig",
+  "javascript_libraries" : [],
+  "use_webpack" : true,
+  "use_babel" : true,
+  "minify_images" : true,
+  "css_source_maps" : false,
+  "js_source_maps" : false,
+  "concatenate_scripts" : false,
+  "minify_scripts" : true,
+  "critical_css" : false,
+  "inline_css" : false
+}

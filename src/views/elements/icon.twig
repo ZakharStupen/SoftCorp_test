@@ -1,0 +1,6 @@
+{% if name %}
+    <svg class="{{ not_element == true ? '' : 'el-icon'  }} {{ modifier }}">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="{{ frontend_public_url }}/images/svg_sprite_inline/sprite_inline.svg#{{ name }}"></use>
+    </svg>
+{% endif %}

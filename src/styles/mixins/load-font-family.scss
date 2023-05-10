@@ -1,0 +1,12 @@
+@mixin loadFontFamily($name, $path, $weight: normal, $style: normal) {
+  @if($path and $name) {
+    @font-face {
+      font-family: $name;
+      src: url('#{$path}.woff2') format('woff2'),
+           url('#{$path}.woff') format('woff');
+      font-weight: $weight;
+      font-style: $style;
+      font-display: swap;
+    }
+  }
+}

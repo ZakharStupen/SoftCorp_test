@@ -1,0 +1,14 @@
+// Sizes
+
+$s-content-padding-x: (
+  xs: px-to-rem(20),
+  md: px-to-rem(40)
+);
+
+
+$s-inner-width: px-to-rem(1140);
+
+$s-header-height: (
+      xs: px-to-rem(56),
+      lg: px-to-rem(76),
+);

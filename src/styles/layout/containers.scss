@@ -1,0 +1,6 @@
+.l-container {
+  max-width: calc(var(--s-padding-x) * 2 + #{$s-inner-width});
+  margin: 0 auto;
+  padding-left: var(--s-padding-x);
+  padding-right: var(--s-padding-x);
+}

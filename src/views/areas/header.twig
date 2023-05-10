@@ -1,0 +1,71 @@
+
+<header class="header js-header {{ header_modifier }}">
+    <div class="header-main" data-main-bar >
+        <div class="header-main__container">
+            <div class="header-main__bar">
+                <div class="header-main__logo">
+                    <a href="/" class="header-main__logo-link">
+                        {% if header_args.site_logo.url %}
+                            <img src="{{ header_args.site_logo.url }}"
+                                 alt="{{ header_args.site_logo.alt }}"
+                                 class="header-main__logo-image">
+                        {% else %}
+                            {% include 'elements/icon.twig' with { name : 'ic-logo', not_element : true , modifier: 'header-main__logo-image' } %}
+                        {% endif %}
+                    </a>
+                </div>
+                <button type="button" class="header-main__toggle" data-main-toggle>
+                    <span class="visually-hidden">open mobile menu</span>
+                    {% include 'elements/icon.twig' with { name : 'ic-burger', modifier: 'header-main__toggle-open' } %}
+                    {% include 'elements/icon.twig' with { name : 'ic-close',  modifier: 'header-main__toggle-close' } %}
+                </button>
+            </div>
+            <nav class="header-nav" role="navigation" data-main-nav>
+                <ul class="header-nav__list header-nav__list--main">
+                    {% for menu_item in header_args.main_menu %}
+                        {% set hasSubItems = menu_item.submenus ? true : false %}
+                        {% set item_classes %}{{ hasSubItems ? 'header-nav__link--parent' : ( menu_item.is_active ? 'is-active' ) }}{% endset %}
+
+                        <li class="header-nav__item" >
+                            <a class="header-nav__link {{ item_classes }}"
+                               href="{{ menu_item.url }}">
+                                {{ menu_item.title }}
+                            </a>
+                            {% if hasSubItems %}
+                                {#<button type="button" data-subitem-toggle class="header-nav__toggle">#}
+                                {#<span class="visually-hidden">open submenu</span>#}
+                                {#</button>#}
+                                <ul class="header-nav__submenu" data-subitem-list>
+                                    <li class="header-nav__submenu-item header-nav__submenu-item--parent">
+                                        <a class="header-nav__submenu-link {{ menu_item.is_active ? 'is-active' }}" href="{{ menu_item.url }}">
+                                            Overview
+                                        </a>
+                                    </li>
+                                    {% for sub_item in menu_item.submenus %}
+                                        <li class="header-nav__submenu-item">
+                                            <a href="{{ sub_item.url }}" class="header-nav__submenu-link {{ sub_item.is_active ? ' is-active'}}">{{ sub_item.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                {% if header_args.menu_extra | length > 0 %}
+                    <ul class="header-nav__list header-nav__list--extra" >
+                        {% for menu_item in header_args.menu_extra %}
+                            <li class="header-nav__item" >
+                                <a class="header-nav__link {{ menu_item.classes }}"
+                                   href="{{ menu_item.url }}">
+                                    {{ menu_item.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+            </nav>
+        </div>
+    </div>
+</header>

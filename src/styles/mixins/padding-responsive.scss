@@ -1,0 +1,26 @@
+@mixin paddingResponsive($paddingList, $side: x){
+
+  @each $breakpoint, $paddingSize in $paddingList {
+    @include media-breakpoint-up($breakpoint) {
+
+      @if ( $side == x or $side == all or $side == left )  {
+        padding-left: $paddingSize;
+      }
+
+      @if ( $side == x or $side == all or $side == right ) {
+        padding-right: $paddingSize;
+      }
+
+      @if ( $side == y or $side == all or $side == top ) {
+        padding-top: $paddingSize;
+      }
+
+      @if ( $side == y or $side == all or $side == bottom ) {
+        padding-bottom: $paddingSize;
+      }
+
+    }
+
+  }
+
+}

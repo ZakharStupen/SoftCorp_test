@@ -1,0 +1,40 @@
+{
+  "main_menu": [
+    {
+      "url": "examples.html",
+      "classes": "",
+      "is_active": false,
+      "title": "Examples"
+    },
+    {
+      "url": "#",
+      "classes": "",
+      "is_active": false,
+      "title": "Results"
+    },
+    {
+      "url": "#",
+      "classes": "",
+      "is_active": false,
+      "title": "News"
+    },
+    {
+      "url": "#",
+      "classes": "",
+      "is_active": false,
+      "title": "Connect"
+    }
+  ],
+  "menu_extra": [
+    {
+      "url": "#",
+      "classes": "",
+      "is_active": false,
+      "title": "Get in touch"
+    }
+  ],
+  "site_logo": {
+    "url": "",
+    "alt": ""
+  }
+}

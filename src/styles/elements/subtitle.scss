@@ -1,0 +1,7 @@
+.el-subtitle {
+  @include fontSizeResponsive($fs-title-2);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  padding-bottom: 0.75em;
+}

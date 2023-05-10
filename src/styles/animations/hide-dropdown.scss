@@ -1,0 +1,15 @@
+@keyframes hide-dropdown {
+    0% {
+      visibility: visible;
+
+      opacity: 1;
+    }
+    98% {
+      visibility: visible;
+
+      opacity: 0;
+    }
+    100% {
+      visibility: hidden;
+    }
+  }

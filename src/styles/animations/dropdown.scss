@@ -1,0 +1,24 @@
+@keyframes show-dropdown {
+  0% {
+    visibility: hidden;
+  }
+  1% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes hide-dropdown {
+  0% {
+    visibility: visible;
+  }
+  98% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}

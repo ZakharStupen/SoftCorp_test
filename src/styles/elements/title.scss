@@ -1,0 +1,9 @@
+.el-title {
+  @include fontSizeResponsive($fs-title-1);
+  font-weight: bold;
+  line-height: 1.33;
+  padding-bottom: .5em;
+  color: $c-accent;
+  max-width: 550px;
+  margin: 0;
+ }

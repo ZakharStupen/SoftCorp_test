@@ -1,0 +1,106 @@
+
+.el-wysiwyg {
+
+  --wsw-font-size: var(--fs-base);
+  --wsw-line-height: var(--line-height);
+  --wsw-font-weight: 300;
+  --wsw-text-color: var(--color-text);
+
+  --wsw-link-color: green;
+  --wsw-link-underline: underline;
+  --wsw-link-color-hover: red;
+  --wsw-link-underline-hover: underline;
+
+  --wsw-base-gap: 1em;
+  --wsw-title-top: #{px-to-rem(36)};
+  --wsw-title-bottom: #{px-to-rem(24)};
+
+  --wsw-list-indent: 2em;
+
+  --wsw-border-color: pink;
+
+
+  display: flow-root;
+
+  font-size: var(--wsw-font-size);
+  line-height: var(--wsw-line-height);
+  font-weight: var(--wsw-font-weight);
+  color: var(--wsw-text-color);
+
+  * {
+    margin-bottom: var(--wsw-base-gap);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  //todo: add font styles for h1-h2
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: var(--wsw-title-bottom);
+    &:not(:first-child){
+      margin-top: var(--wsw-title-top);
+    }
+  }
+
+  h4,
+  h5,
+  h6 {
+    margin-bottom: var(--wsw-title-bottom);
+  }
+
+
+  a {
+    --link-color: var(--wsw-link-color);
+    --link-underline: var(--wsw-link-underline);
+    --link-color-hover: var(--wsw-link-color-hover);
+    --link-underline-hover: var(--wsw-link-underline-hover);
+  }
+
+
+  p, li {
+    font-size: var(--wsw-font-size);
+    line-height: var(--wsw-line-height);
+    font-weight: var(--wsw-font-weight);
+    color: var(--wsw-text-color);
+
+  }
+
+  ul, ol {
+    padding-left: var(--wsw-list-indent);
+  }
+
+  img {
+  }
+
+  q {
+    font-style: italic;
+  }
+
+  blockquote {}
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  tr, td,th, thead, tbody {
+    margin: unset;
+  }
+
+  hr {
+    border-color: var(--wsw-border-color);
+    border-style: solid;
+    //border-bottom: none;
+  }
+
+  td, th {
+    padding: 0.5em;
+    border: px-to-rem(1) solid var(--wsw-border-color);
+    text-align: center;
+    vertical-align: text-top;
+  }
+
+}
