@@ -1,0 +1,308 @@
+{% import 'snippets/elements.twig' as elements %}
+
+{% extends "./layout/base.twig" %}
+
+{% block title %}Examples{% endblock %}
+
+
+{% block scripts %}
+    {{ parent() }}
+
+    <script src="{{ frontend_public_url }}/js/examples.js"></script>
+{% endblock %}
+
+{% block content %}
+
+    <section class="s-example">
+        <div class="s-example__container">
+
+            <h1 class="el-title">
+                Hello!
+            </h1>
+
+            <ul>
+                <li><a href="#dev-variables">Dev variables</a></li>
+                <li><a href="#icons-example">Icons example</a></li>
+                <li><a href="#mock-data-example">Twig include & Mock data</a></li>
+                <li><a href="#buttons-example">Buttons example</a></li>
+                <li><a href="#form-fields-example">Form Fields example</a></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <div class="s-example">
+        <div class="s-example__container">
+
+            <h1 class="el-title">
+                Twig examples
+            </h1>
+
+            <article id="dev-variables" class="s-example__line">
+                <h2 class="el-subtitle">isGulpTwig variable</h2>
+                <p>isGulpTwig - TWIG variable to detect that this is dev mode:</p>
+
+                <p>Check if npm or PHP build:
+                    {% if not isGulpTwig %}
+                        <span style="color: red"> is not GULP  </span>
+                    {% else %}
+                        <span style="color: red"> GULP detected </span>
+                    {% endif %}
+                </p>
+            </article>
+
+            <article id="icons-example" class="s-example__line">
+                <h2 class="el-subtitle">Icons example:</h2>
+
+                {% include "elements/icon.twig"  with { name: "ic-google" } %}
+                {% include "elements/icon.twig"  with { name: "ic-instagram" } %}
+                {% include "elements/icon.twig"  with { name: "ic-linkedin" } %}
+                {% include "elements/icon.twig"  with { name: "ic-twitter" } %}
+
+                <h2 class="el-subtitle mt-4">Icons with macro snippets :</h2>
+
+                {{ elements.icon("ic-google") }}
+                {{ elements.icon("ic-instagram") }}
+                {{ elements.icon("ic-linkedin", 'text-muted') }}
+
+                <p>Read more about macros <a target="_blank"
+                                             href="https://wiki.effective-soft.com/display/ESHTML/Twig+macro">here</a>
+                </p>
+
+            </article>
+
+        </div>
+    </div>
+
+    {% include 'sections/example.twig' with { args: _example } %}
+
+
+    <div class="s-example" id="buttons-example">
+        <div class="s-example__container">
+
+            <h1 class="el-title">
+                Style Guide examples
+            </h1>
+
+            <article class="s-example__line">
+
+                <h2 class="el-subtitle">Buttons example:</h2>
+
+                <button class="btn" type="button">Button</button>
+                <a href="#" class="btn">Button link</a>
+
+
+                <br/>
+                <br/>
+
+                <button type="button" class="btn">
+                    Button with icon
+                    {% include "elements/icon.twig"  with { name: "ic-angle-right", not_element: true, modifier: "btn__icon" } %}
+                </button>
+
+                <button type="button" class="btn btn--icon">
+                    {% include "elements/icon.twig"  with { name: "ic-angle-right", not_element: true, modifier: "btn__icon" } %}
+                </button>
+
+                <button type="button" class="btn btn--icon btn--text">
+                    {% include "elements/icon.twig"  with { name: "ic-angle-right", not_element: true, modifier: "btn__icon" } %}
+                </button>
+
+                <br/>
+                <br/>
+
+                <a href="#" class="btn btn--text"> Button text link</a>
+                <button type="button" class="btn btn--text"> Button text button</button>
+
+            </article>
+
+            <article class="s-example__line" id="wysiwyg-example">
+                <h2 class="el-subtitle">Form Fields example</h2>
+
+                <div class="el-wysiwyg">
+
+                    <h1>h1 Lorem ipsum dolor sit.</h1>
+                    <h2>h2 Lorem ipsum dolor.</h2>
+                    <h3>h3 Lorem ipsum dolor sit amet, consectetur.</h3>
+                    <h4>h4 Lorem ipsum consectetur.</h4>
+                    <h5>h5 Lorem ipsum dolor sit amet, consectetur.</h5>
+                    <h6>h6 Lorem consectetur.</h6>
+
+
+                    <h2>ul :</h2>
+                    <ul>
+                        <li> Lorem ipsum dolor sit.</li>
+                        <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi.</li>
+                        <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto aut dicta est,
+                            facilis iste maxime sequi sit. Magni, nihil!
+                        </li>
+                    </ul>
+
+                    <h2>ol :</h2>
+                    <ol>
+                        <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cum praesentium
+                            voluptatem?
+                        </li>
+                        <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cum praesentium
+                            voluptatem?
+                        </li>
+                        <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cum praesentium
+                            voluptatem?
+                        </li>
+                    </ol>
+
+                    <h2>p and inline tags :</h2>
+                    <p>Lorem ipsum dolor sit <a href=""> link here</a>, consectetur adipisicing elit. Fuga ipsam modi odio sequi tempora
+                        tempore! Distinctio ea eligendi et sequi! <b> b tag </b> architecto <em>em tag</em> nemo ratione
+                        rem, sapiente ut?</p>
+
+                    <p><q>it is q tag - quite</q> - adipisicing elit. Accusamus accusantium amet animi
+                        architecto assumenda, autem <mark>it is mark</mark> ducimus eius esse fuga, fugiat illo impedit iste iusto
+                        magni molestias nemo nihil numquam officiis possimus praesentium quia quidem quis quisquam sint
+                        voluptates voluptatibus?</p>
+
+
+                    <h2>image tag :</h2>
+                    <img src="https://picsum.photos/200/300" alt="">
+                    <img src="https://picsum.photos/1700/200" alt="">
+
+                    <figure>
+                        <img src="https://picsum.photos/600/300" alt="">
+                        <figcaption>Image with caption </figcaption>
+                    </figure>
+
+                    <h2>hr :</h2>
+                    <hr>
+
+
+                    <h2>Blockquote :</h2>
+                    <figure>
+                        <blockquote cite="https://www.huxley.net/bnw/four.html">
+                            blockquote v1 :
+                            <p> Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
+                        </blockquote>
+                        <figcaption>—Aldous Huxley, <cite>Brave New World</cite></figcaption>
+                    </figure>
+
+                    <blockquote cite="https://www.huxley.net/bnw/four.html">
+                        blockquote v2 :
+                        <p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
+                    </blockquote>
+
+                    <h2>table</h2>
+
+                    <table>
+                        <thead>
+                                <tr>
+                                    <th>column 1</th>
+                                    <th>column 2</th>
+                                    <th>column 3</th>
+                                    <th>column 4</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>22</td>
+                                <td>32</td>
+                                <td>42</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>23</td>
+                                <td>33</td>
+                                <td>43</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </article>
+
+
+            <article class="s-example__line" id="form-fields-example">
+                <h2 class="el-subtitle">Form Fields example:</h2>
+
+                <div class="el-field">
+                    <label for="input-field" class="el-field__label">Input Example</label>
+                    <input class="el-field__input" type="text" id="input-field"
+                           name="input-name"/>
+                    <label class="el-field__error" hidden for="input-field">error message</label>
+                </div>
+
+                <div class="el-field">
+                    <label for="select-field" class="el-field__label">Select Example</label>
+                    <select class="el-field__input el-field__input--select" type="text" id="select-field"
+                            name="select-name">
+                        <option>option 1</option>
+                        <option>option 2</option>
+                        <option>option 3</option>
+                    </select>
+                    <label class="el-field__error" hidden for="select-field">error message</label>
+                </div>
+
+                <div class="el-field">
+                    <label for="textarea-field" class="el-field__label">Textarea Example</label>
+                    <textarea class="el-field__input el-field__input--textarea" id="textarea-field"
+                              name="textarea-name"></textarea>
+                    <label class="el-field__error" hidden for="textarea-field">error message</label>
+                </div>
+
+            </article>
+
+
+        </div>
+    </div>
+
+
+    <div class="s-example">
+        <div class="s-example__container">
+
+            <article class="s-example__line js-test-api">
+
+                <h2 class="el-title">Test an Request?</h2>
+
+                <button class="btn" type="button"
+                        data-test-api="/ajax-requests/example-server-response.json">
+                    Click Me!
+                </button>
+
+                <div class="el-wysiwyg mt-4" data-test-result>
+                    Here is a Place for response
+                </div>
+
+            </article>
+
+        </div>
+    </div>
+
+    <div class="s-example">
+        <div class="s-example__container">
+
+            <article class="s-example__line js-test-js-connect">
+
+                <h2 class="el-title">Connect additional JS on demand?</h2>
+
+                <p class="el-wysiwyg"> This is helpfull for Plugins loading.  </p>
+
+                <button class="btn" type="button" data-test-api>
+                    Run dynamic import
+                </button>
+
+                <div class="el-wysiwyg mt-4" data-test-result>
+                    Here is a Place for result
+                </div>
+
+            </article>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+:root {
+/*
+   Examples:
+
+  --page-bg: #{$c-main-bg};
+
+  @include propertyResponsive('--s-padding-x', $s-section-padding-x);
+
+  @include propertyResponsive('--s-header-height', ( xs: px-to-rem(40), md: px-to-rem(60) ) );
+
+*/
+
+  --line-height: 1.4;
+  --color-main-bg: #{$c-main-bg};
+
+  --color-text: #{$c-text};
+
+
+
+  --link-color: #{$c-brand};
+  --link-underline: none;
+  --link-color-hover: #{$c-accent};
+  --link-underline-hover: none;
+
+  --focus-outline: #{$focus-outline};
+  --focus-outline-offset: #{$focus-outline-offset};
+
+  @include propertyResponsive('--fs-base', $fs-base);
+  @include propertyResponsive('--fs-text', $fs-text);
+
+
+
+  @include propertyResponsive('--s-padding-x', $s-content-padding-x);
+  @include propertyResponsive('--s-header-height', $s-header-height);
+
+}

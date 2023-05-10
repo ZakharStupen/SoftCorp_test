@@ -1,0 +1,13 @@
+@mixin propertyResponsive($prop, $valuesList) {
+    @if($prop and $valuesList) {
+        @if ( type-of($valuesList) == "map") {
+            @each $breakpoint, $value in $valuesList {
+                @include media-breakpoint-up($breakpoint) {
+                      #{$prop}: $value;
+                }
+            }
+        } @else {
+            #{$prop}: $valuesList;
+        }
+    }
+}

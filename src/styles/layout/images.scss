@@ -1,0 +1,22 @@
+.l-image-fill {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+.l-image-cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.l-image-contain {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+}
