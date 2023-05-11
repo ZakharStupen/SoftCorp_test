@@ -1,40 +1,32 @@
 {
   "main_menu": [
     {
-      "url": "examples.html",
+      "url": "#",
       "classes": "",
-      "is_active": false,
-      "title": "Examples"
+      "is_active": true,
+      "title": "Бизнес"
     },
     {
       "url": "#",
       "classes": "",
       "is_active": false,
-      "title": "Results"
+      "title": "О нас"
     },
     {
       "url": "#",
       "classes": "",
       "is_active": false,
-      "title": "News"
+      "title": "Цены"
     },
     {
       "url": "#",
       "classes": "",
       "is_active": false,
-      "title": "Connect"
-    }
-  ],
-  "menu_extra": [
-    {
-      "url": "#",
-      "classes": "",
-      "is_active": false,
-      "title": "Get in touch"
+      "title": "Оформить заказ"
     }
   ],
   "site_logo": {
-    "url": "",
-    "alt": ""
+    "url": "images/logo.png",
+    "alt": "logo"
   }
 }

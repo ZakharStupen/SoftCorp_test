@@ -1,10 +1,9 @@
 .header {
-  background-color: $c-white;
+  --bg-color: rgba(16, 16, 29, 0.9);
+  background-color: var(--bg-color);
   padding-top: var(--s-header-height);
-  $header-shadow: 0 px-to-rem(2) px-to-rem(4) rgba($c-black, 0.15);
   position: fixed;
   z-index: 100;
   @import "header/header-main";
   @import "header/header-nav";
-
 }

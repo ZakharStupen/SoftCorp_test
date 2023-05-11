@@ -1,5 +1,5 @@
 &-nav {
-  background: $c-white;
+  background: $c-black;
   position: fixed;
   left: 0;
   width: 100%;
@@ -16,51 +16,28 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    &--extra {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
   }
 
   &__item {
-    padding: px-to-rem(5) 0;
+    padding: px-to-rem(16) 0;
   }
 
   &__link {
-    padding-top: px-to-rem(5);
-    padding-bottom: px-to-rem(5);
-    text-decoration: none;
-    font-family: $font-base;
+    text-transform: uppercase;
+    font-size: px-to-rem(20);
+    line-height: 1.2;
+    color: $c-white;
     font-weight: 600;
-    line-height: (30/18);
-    display: inline-block;
-    vertical-align: middle;
-    font-size: px-to-rem(24);
-    color: inherit;
-    transition: color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 0 0 $c-accent;
-    margin-left: px-to-rem(4);
-    margin-right: px-to-rem(4);
 
     &:hover {
-      color: inherit;
-      //color: $c-accent;
-      box-shadow: 0 px-to-rem(4) 0 0 $c-text;
+      color: $c-brand;
     }
 
     &.is-active {
-      color: inherit;
-      //color: $c-accent;
-      box-shadow: 0 px-to-rem(4) 0 0 $c-text;
+      color: $c-brand;
     }
 
-
-    &--extra-item {
-      color: $c-accent;
-    }
-
-    &--btn {
+   /* &--btn {
       color: $c-white;
       background: $c-black;
       margin-left: 0;
@@ -73,10 +50,10 @@
         background: $c-black;
         box-shadow: none;
       }
-    }
+    }*/
   }
 
-  &__toggle {
+  /*&__toggle {
     display: none;
     position: relative;
     z-index: 3;
@@ -87,7 +64,7 @@
     font-size: px-to-rem(10);
     padding: 1em;
     margin-right: - .5em;
-    color: inherit;
+    color: $c-white;
     &:before {
       content: '';
       display: block;
@@ -101,14 +78,15 @@
       border-bottom: none;
     }
     &:hover {
-      color: $c-accent;
+      color: $c-brand;
     }
-  }
+  }*/
 
   &__submenu {
     margin: 0 0 0 px-to-rem(30);
     list-style: none;
     padding: 0;
+    background: transparent;
     font-size: px-to-rem(18);
     &-item {
       margin: px-to-rem(5) 0;
@@ -120,18 +98,18 @@
       text-decoration: none;
       font-size: inherit;
       font-family: $font-base;
-      line-height: (30/18);
+      line-height: 1.2;
       font-weight: 600;
-      color: inherit;
+      color: $c-white;
       display: inline-block;
       transition: color 0.3s ease;
       padding-top: px-to-rem(5);
       padding-bottom: px-to-rem(5);
       &:hover {
-        color: red;
+        color: $c-brand;
       }
       &.is-active {
-        color: red;
+        color: $c-brand;
       }
     }
   }
@@ -159,9 +137,7 @@
       &__list {
         display: flex;
         &--main {
-          margin-right: auto;
           margin-left: auto;
-          padding-left: px-to-rem(16);
         }
       }
       &__toggle {
@@ -169,8 +145,7 @@
       }
 
       &__link {
-        font-size: px-to-rem(16);
-
+        font-size: px-to-rem(13);
         &--parent {
           position: relative;
           margin-right: 1.4rem;
@@ -193,7 +168,7 @@
       &__item {
         position: relative;
         &:not(:first-child){
-          margin-left: px-to-rem(16);
+          margin-left: px-to-rem(60);
         }
       }
 
@@ -201,8 +176,8 @@
         position: absolute;
         top: 100%;
         left: 0;
-        background-color: $c-white;
-        box-shadow:  0 0 px-to-rem(4) rgba($c-black, 0.15);
+        background-color: $c-black;
+        border: px-to-rem(1) solid $c-black;
         padding: px-to-rem(15);
         border-radius: px-to-rem(8);
         min-width: px-to-rem(252);
