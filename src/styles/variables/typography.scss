@@ -1,7 +1,7 @@
 // Typography
 
 // Fonts:
-$font-base: 'Montserrat', sans-serif;
+$font-base: 'Lato', sans-serif;
 
 
 // Font sizes:
@@ -10,13 +10,18 @@ $fs-base: px-to-rem(16);
 
 $fs-text:(
     xs: px-to-rem(16),
-    md: px-to-rem(18),
+    md: px-to-rem(20),
 );
 
 $fs-title-1: (
         xs: px-to-rem(36),
         md: px-to-rem(44),
         xl: px-to-rem(48)
+);
+
+$fs-button: (
+    xs: px-to-rem(10),
+    md: px-to-rem(13),
 );
 
 $fs-title-2: px-to-rem(24);
