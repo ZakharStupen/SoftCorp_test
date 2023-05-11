@@ -1,1 +1,32 @@
-<section>{{ args.title }}</section>
+<section class="s-hero">
+    <div class="s-hero__container">
+        <div class="s-hero__wrapper">
+            {% if args.title %}
+                <h1 class="s-hero__title">
+                    {{ args.title }}
+                </h1>
+            {% endif %}
+            {% if args.description %}
+                <div class="s-hero__description">
+                    {{ args.description }}
+                </div>
+            {% endif %}
+            {% if args.buttons %}
+                <div class="s-hero__links">
+                    {% for item in args.buttons %}
+                            {% if item.text and item.url %}
+                                <a href="{{ item.url }}" class="s-hero__link btn  {{ item.is_alternative ? 'btn--alternative' }}">
+                                    {{ item.text }}
+                                </a>
+                            {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if args.background.src %}
+                <div class="s-hero__media">
+                    <img class="s-hero__img" src="{{ args.background.src }}" alt="{{ args.background.alt }}">
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

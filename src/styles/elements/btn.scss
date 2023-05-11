@@ -1,60 +1,35 @@
-
-.btn-clean {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  cursor: pointer;
-  outline: none;
-  font-size: inherit;
-  color: inherit;
-}
-
 .btn {
   --btn-bg: #{$c-brand};
-  --btn-text: #{$c-text-light};
-  --btn-bg-hover: #{$c-text-light};
+  --btn-text: #{$c-white};
+  --btn-bg-hover: #{$c-white};
   --btn-text-hover: #{$c-brand};
-  --btn-icon-gap-left: .6em;
-  --btn-icon-gap-right: -.8em;
+  --btn-border: #{$c-white};
+
 
   font-family: $font-base;
-  font-weight: 600;
-  line-height: 1.25;
-  vertical-align: middle;
-  border: px-to-rem(1) solid var(--btn-bg);
+  font-weight: 400;
+  @include fontSizeResponsive($fs-button);
+  line-height: 1.2;
+  border: px-to-rem(1) solid var(--btn-border);
   box-shadow: none;
-  border-radius: 0.25em;
-  min-width: px-to-rem(210);
-  margin: px-to-rem(10) 0;
-  transition: color 0.2s linear,
-              background 0.2s linear;
+  min-width: px-to-rem(183);
+  border-radius: px-to-rem(4);
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
   outline: none;
   text-align: center;
-  position: relative;
-  padding: 0.875em 2em;
+  transition: color 0.3s linear, background 0.3s linear;
+  padding: px-to-rem(13) px-to-rem(32);
   overflow: hidden;
   background:  var(--btn-bg);
   color: var(--btn-text);
-
-
-  &__icon {
-    display: inline-block;
-    height: 1em;
-    width: 1em;
-    margin-left: var(--btn-icon-gap-left);
-    margin-right:  var(--btn-icon-gap-right);
-    vertical-align: middle;
-    fill: currentColor;
-  }
+  text-transform: uppercase;
 
   &:hover {
     color: var(--btn-text-hover);
     background:  var(--btn-bg-hover);
   }
-
   &:focus,
   &:active {
     color: var(--btn-text-hover);
@@ -66,23 +41,11 @@
     color: rgba($c-black, 0.4);
   }
 
-
-  &--text {
-    font-weight: 600;
-    padding: 0;
-    box-shadow: none;
-    --btn-bg: none;
-    --btn-text: #{$c-brand};
-    --btn-bg-hover: none;
-    --btn-text-hover: #{$c-accent};
+  &--alternative {
+    --btn-bg: #{$c-white};
+    --btn-text: #{$c-black};
+    --btn-bg-hover: #{$c-black};
+    --btn-text-hover: #{$c-white};
+    --btn-border: #{$c-black};
   }
-
-  &--icon {
-    min-width: 0;
-    border-radius: 1.5em;
-    padding: 0.875em 1em;
-    --btn-icon-gap-left: 0;
-    --btn-icon-gap-right: 0;
-  }
-
 }

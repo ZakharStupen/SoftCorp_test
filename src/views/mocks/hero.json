@@ -1,3 +1,20 @@
 {
-  "title": "Using Mock data"
+  "title": "<b>Lorem ipsum</b> dolor sit<br> amet consectetur <b>adipiscing</b>",
+  "description": "<p><b>At vero eos et accusamus et iusto odio dignissimos ducimus!</b></p><ul><li>Totam rem aperiam eaque ipsa</li><li>Sit voluptatem accusantium doloremque laudantium</li><li>Sed ut perspiciatis, unde omnis iste natus error</li></ul>",
+  "buttons": [
+    {
+      "text": "заказать",
+      "url": "#",
+      "is_alternative": false
+    },
+    {
+      "text": "подробнее",
+      "url": "#",
+      "is_alternative": true
+    }
+  ],
+  "background": {
+    "src": "images/background.jpg",
+    "alt": "background"
+  }
 }

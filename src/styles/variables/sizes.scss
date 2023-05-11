@@ -6,9 +6,6 @@ $s-content-padding-x: (
 );
 
 
-$s-inner-width: px-to-rem(1140);
+$s-inner-width: px-to-rem(1172);
 
-$s-header-height: (
-      xs: px-to-rem(56),
-      lg: px-to-rem(76),
-);
+$s-header-height: px-to-rem(100);
