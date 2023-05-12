@@ -1,6 +1,58 @@
 
 <footer class="footer">
-
-{# {{ footer_args | json_encode }}#}
-
+    <div class="footer__container">
+        {% if footer_args.copyright %}
+            <div class="footer__copyright">
+                {{ footer_args.copyright }}
+            </div>
+        {% endif %}
+        {% if footer_args.menu_brand %}
+            <div class="footer__brand">
+                <ul class="footer__brand-list">
+                    {% for item in footer_args.menu_brand %}
+                        {% if item.title and item.url %}
+                            <li class="footer__brand-item">
+                                {% if item.svg %}
+                                    <span class="footer__brand-icon el-econ">
+                                        {{ item.svg }}
+                                    </span>
+                                    {% else %}
+                                    <span class="footer__brand-logo">
+                                        <img src=" {{ item.logo.url }} " alt=" {{ item.logo.alt }} ">
+                                    </span>
+                                {% endif %}
+                                <a href="{{ item.url }}">
+                                    {{ item.title }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        {% if footer_args.menu_social %}
+            <div class="footer__social">
+                <ul class="footer__social-list">
+                    {% for item in footer_args.menu_social %}
+                        {% if item.title and item.url %}
+                            <li class="footer__social-item">
+                                {% if item.svg %}
+                                    <span class="footer__social-icon el-econ">
+                                        {{ item.svg }}
+                                    </span>
+                                {% else %}
+                                    <span class="footer__social-logo">
+                                        <img src=" {{ item.logo.url }} " alt=" {{ item.logo.alt }} ">
+                                    </span>
+                                {% endif %}
+                                <a href="{% if item.mail %}mailto:{%  endif %}{% if item.tel %}tel:{%  endif %}{{ item.url }}">
+                                    {{ item.title }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
 </footer>
