@@ -1,0 +1,163 @@
+<section class="s-delivery">
+    {% if args.background.src %}
+        <div class="s-delivery__background">
+            <img src="{{ args.background.src }}" alt="{{ args.background.alt }}">
+        </div>
+    {% endif %}
+    <div class="s-delivery__container">
+            {% if args.title %}
+                <h2 class="s-delivery__title">
+                    {{ args.title }}
+                </h2>
+            {% endif %}
+            {% if args.description %}
+                <div class="s-delivery__description">
+                    {{ args.description }}
+                </div>
+            {% endif %}
+            {% if args.list %}
+                <ul class="s-delivery__list">
+                    {% if args.circles %}
+                        <div class="s-delivery__list-circles">
+                            <img src="{{ args.circles.src }}" alt="{{ args.circles.alt }}">
+                        </div>
+                    {% endif %}
+                    {% for item in args.list %}
+                        <li class="s-delivery__item">
+                            {% if item.svg or item.icon.src %}
+                                <div class="s-delivery__item-media">
+                                    {% if item.svg %}
+                                        <span class="s-delivery__item-icon el-icon">
+                                            {{ item.svg }}
+                                        </span>
+                                    {% else %}
+                                        <span class="s-delivery__item-icon">
+                                            <img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}">
+                                        </span>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                            {% if item.text %}
+                                <h3 class="s-delivery__item-title">
+                                    {{ item.text }}
+                                </h3>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        <div class="s-delivery__subscribe js-form">
+            {% if args.form %}
+                <form class="s-delivery__form">
+                    {% if args.form.select %}
+                        <div class="s-delivery__field el-select" data-field>
+                        <select class="el-select__field" id="{{ args.form.select.id }}"
+                                name="{{ args.form.select.name }}"
+                                placeholder="{{ args.form.select.placeholder }}" data-select>
+                            <option class="el-select__option" value="">
+                                {{ args.form.select.label }}
+                            </option>
+                            {% for items in args.form.select.option %}
+                                <option>
+                                    {{ items.text }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <span class="el-select__error visually-hidden" >
+                                <span data-validate-mess>
+                                    {{ args.form.select.error }}
+                                </span>
+                        </span>
+                    </div>
+                    {% endif %}
+                    {% if args.form.email %}
+                        <div class="s-delivery__field el-field" data-field>
+                            <input
+                                    class="el-field__input"
+                                    type="{{ args.form.email.type }}"
+                                    name="{{ args.form.email.name }}"
+                                    placeholder=" {{ args.form.email.placeholder }}"
+                                    id="{{ args.form.email.id }}">
+                            <span class="el-field__error visually-hidden" data-validate-mess>
+                            <span>
+                                {{ args.form.email.error }}
+                            </span>
+                        </span>
+                            <label class="el-field__label" for="{{ args.form.email.id }}">
+                                {{ args.form.email.label }}
+                            </label>
+                        </div>
+                    {% endif %}
+                    {% if args.form.name %}
+                        <div class="s-delivery__field el-field" data-field>
+                            <input
+                                    class="el-field__input"
+                                    type="{{ args.form.name.type }}"
+                                    name="{{ args.form.name.name }}"
+                                    placeholder=" {{ args.form.name.placeholder }}"
+                                    id="{{ args.form.name.id }}">
+                            <span class="el-field__error visually-hidden" >
+                                <span data-validate-mess>
+                                   {{ args.form.name.error }}
+                                </span>
+                            </span>
+                            <label class="el-field__label" for="{{ args.form.name.id }}">
+                                {{ args.form.name.label }}
+                            </label>
+                        </div>
+                    {% endif %}
+                    {% if args.form.range %}
+                        <div class="s-delivery__range el-range" data-range>
+                            <input
+                                    class="el-range__input"
+                                    type="{{ args.form.range.type }}"
+                                    name="{{ args.form.range.name }}"
+                                    placeholder=" {{ args.form.range.placeholder }}"
+                                    id="{{ args.form.range.id }}"
+                                    min="{{ args.form.range.min }}"
+                                    max="{{ args.form.range.max }}"
+                                    value="{{ args.form.range.value }}"
+                                    steps="1"
+                            >
+                            <span class="el-range__error visually-hidden" >
+                                <span data-validate-mess>
+                                   {{ args.form.range.error }}
+                                </span>
+                            </span>
+                            <output class="el-range__value" for="{{ args.form.range.id }}" data-range-value>
+                                {{ args.form.range.value }} %
+                            </output>
+                            <label class="el-range__label" for="{{ args.form.range.id }}">
+                                {{ args.form.range.label }}
+                            </label>
+                        </div>
+                    {% endif %}
+                    {% if args.form.file %}
+                        <div class="el-file" data-file>
+                            <input class="el-file__input" type="{{ args.form.file.type }}"
+                                   name="{{ args.form.file.name }}"
+                                   id="{{ args.form.file.name }}"
+                                   placeholder=" {{ args.form.file.placeholder }}" data-file-input>
+                            <label class="el-file__label" for="{{ args.form.file.name }}">
+                                <span class="el-file__text" data-text-file>
+                                    {{ args.form.file.label }}
+                                </span>
+                            </label>
+                            <button class="el-file__reset" type="reset" data-button-reset>
+                                {% include "elements/icon.twig"  with { name: "ic-close" } %}
+                            </button>
+                            <div class="el-file__loader"></div>
+                        </div>
+                    {% endif %}
+                    {% if args.form.button %}
+                        <div class="s-delivery__inner">
+                            <button class="s-delivery__button btn" type="submit">
+                                {{ args.form.button }}
+                            </button>
+                        </div>
+                    {% endif %}
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</section>

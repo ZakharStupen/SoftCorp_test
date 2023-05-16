@@ -3,6 +3,7 @@ import scrollLock from 'scroll-lock';
 import 'focus-visible';
 
 import Header from './components/header';
+import Form from './components/form';
 
 svg4everybody();
 
@@ -17,9 +18,7 @@ class App {
   constructor() {
     this.header = new Header('.js-header');
 
-    // how to init modules:
-    // this.initModule(testJSConnect, '.js-test-js-connect');
-    // this.initModule(testServerRequest, '.js-test-api');
+    this.initModule(Form, '.js-form');
 
   }
 

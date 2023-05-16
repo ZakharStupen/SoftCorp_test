@@ -10,7 +10,7 @@
             <div class="footer__brand">
                 <ul class="footer__brand-list">
                     {% for item in footer_args.menu_brand %}
-                        {% if item.title and item.url %}
+                        {% if item.title %}
                             <li class="footer__brand-item">
                                 {% if item.svg %}
                                     <span class="footer__brand-icon el-econ">
@@ -21,9 +21,7 @@
                                         <img src=" {{ item.logo.url }} " alt=" {{ item.logo.alt }} ">
                                     </span>
                                 {% endif %}
-                                <a href="{{ item.url }}">
                                     {{ item.title }}
-                                </a>
                             </li>
                         {% endif %}
                     {% endfor %}

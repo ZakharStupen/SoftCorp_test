@@ -24,7 +24,8 @@
                 javascript
             <link rel="preload" href="{{ frontend_public_url }}/js/scripts.js" as="script">
         #}
-
+       {# <link rel="stylesheet" type="text/css" href="{{ frontend_public_url }}/styles/libraries/choices/base.min.css">#}
+        <link rel="stylesheet" type="text/css" href="{{ frontend_public_url }}/styles/libraries/choices/choices.min.css">
         <link rel="stylesheet" type="text/css" href="{{ frontend_public_url }}/styles/style.css">
 
     {% endblock %}
@@ -50,6 +51,7 @@
 
 
 {% block scripts %}
+    <script src="{{ frontend_public_url }}/js/libs/choices.min.js"></script>
     <script src="{{ frontend_public_url }}/js/scripts.js"></script>
 {% endblock %}
 

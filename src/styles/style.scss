@@ -20,6 +20,8 @@
 @import "layout/containers";
 @import "layout/images";
 
+
+
 // Elements
 @import "elements/icons";
 @import "elements/btn";
@@ -27,7 +29,12 @@
 @import "elements/subtitle";
 @import "elements/wysiwyg";
 @import "elements/field";
+@import "elements/file";
+@import "elements/range";
+@import "elements/select";
 
+//libraries
+@import "libraries/choices/choices";
 
 // components
 
@@ -38,6 +45,7 @@
 // sections
 @import "sections/example";
 @import "sections/hero";
+@import "sections/delivery";
 
 // templates
 @import "templates/base";

@@ -1,0 +1,36 @@
+.el-range {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  color: $c-white;
+  font-size: $fs-base;
+  line-height: 1.2;
+  &__input {
+    width: 100%;
+    order: 3;
+    -webkit-appearance: none;
+    height: px-to-rem(6);
+    border: px-to-rem(1) solid $c-white;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: px-to-rem(3);
+    margin-top: px-to-rem(20);
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: px-to-rem(24);
+      height: px-to-rem(24);
+      border-radius: 50%;
+      background: #42A9ED;
+      border: px-to-rem(3) solid #286690;
+      cursor: pointer;
+    }
+  }
+  &__value {
+    width: 50%;
+    order: 2;
+    text-align: right;
+  }
+  &__label {
+    width: 50%;
+    order: 1;
+  }
+}
