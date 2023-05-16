@@ -8,7 +8,9 @@
   $mainMenu: #{&};
   transition: background 0.3s ease;
   min-height: var(--s-header-height);
-
+  &.is-scroll {
+    background: $c-black;
+  }
   &__logo {
     align-self: center;
     &-link {
@@ -84,11 +86,6 @@
 
       $mainBlock: #{&};
       height: var(--s-header-height);
-
-        &.is-scroll {
-          background: $c-black;
-        }
-
 
       &.is-invisible {
         visibility: hidden;

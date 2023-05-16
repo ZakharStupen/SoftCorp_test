@@ -1,9 +1,11 @@
 .el-title {
   @include fontSizeResponsive($fs-title-1);
-  font-weight: bold;
-  line-height: 1.33;
-  padding-bottom: .5em;
-  color: $c-accent;
-  max-width: 550px;
-  margin: 0;
+  color: $c-black;
+  line-height: 1.2;
+  font-weight: 700;
+  text-transform: uppercase;
+  b {
+    color: $c-brand;
+    font-weight: 800;
+  }
  }

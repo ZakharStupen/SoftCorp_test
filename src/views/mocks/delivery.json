@@ -22,7 +22,7 @@
       "text": "Sed do eiusmod tempor",
       "svg": "",
       "icon": {
-        "src" : "images/svg_sprite_inline/file.png",
+        "src" : "images/file.png",
         "alt": "file"
       }
     },
@@ -43,13 +43,18 @@
       }
     }
   ],
-  "circles": {
-    "src": "images/circles.png",
-    "alt": "circles"
-  },
   "background": {
-    "src": "images/background_delivery.png",
-    "alt": "background"
+    "mobile": {
+      "src": "images/delivery/background_delivery_mobile.png"
+    },
+    "tablet": {
+      "src": "images/delivery/background_delivery_tablet.png"
+
+    },
+    "desktop": {
+      "src": "images/delivery/background_delivery.png"
+    },
+    "alt": "background_delivery"
   },
   "form": {
     "select": {

@@ -24,6 +24,10 @@
   &__social {
     padding-top: px-to-rem(12);
     --link-color: #{$c-white};
+    &-logo {
+      max-width: px-to-rem(20);
+      max-height: px-to-rem(20);
+    }
   }
   &__brand, &__social {
     display: flex;
@@ -40,8 +44,8 @@
       gap: px-to-rem(10);
     }
     &-icon {
-      width: px-to-rem(20);
-      height: px-to-rem(20);
+      max-width: px-to-rem(20);
+      max-height: px-to-rem(20);
       img {
         width: 100%;
         height: 100%;
@@ -55,8 +59,7 @@
     }
     &__copyright {
       padding-bottom:0;
-      width: 20%;
-      margin-right: 9%;
+      width: 30%;
     }
     &__brand {
       padding-bottom: 0;

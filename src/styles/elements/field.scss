@@ -30,16 +30,21 @@
     &::placeholder {
       visibility: hidden;
     }
+    &::-moz-placeholder {
+      opacity: 0;
+    }
     &:focus {
-      background: $c-white;
-      border-color: $c-brand;
+      background: #3A3C4C;
+      color: $c-white;
+      border-color: #3A3C4C;
     }
     &:focus ~ .el-field__label,
     &:not(:placeholder-shown) ~ .el-field__label {
       top: px-to-rem(-10);
       left: px-to-rem(16);
       font-size: px-to-rem(12);
-      background: $c-white;
+      background: #3A3C4C;
+      color: $c-white;
       border-radius: px-to-rem(3);
       z-index: 10;
       padding: 0 px-to-rem(8);
@@ -51,7 +56,7 @@
     display: block;
     position: absolute;
     top: px-to-rem(12);
-    left: px-to-rem(28);
+    left: px-to-rem(10);
     transition: 0.3s;
     font-size: $fs-base;
     cursor: inherit;

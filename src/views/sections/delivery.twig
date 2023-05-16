@@ -1,7 +1,12 @@
 <section class="s-delivery">
-    {% if args.background.src %}
+    {% if args.background %}
         <div class="s-delivery__background">
-            <img src="{{ args.background.src }}" alt="{{ args.background.alt }}">
+            <picture>
+                <source srcset="{{ args.background.mobile.src }}" media="(max-width: 480px)">
+                <source srcset="{{ args.background.tablet.src }}" media="(max-width: 1024px)">
+                <source srcset="{{ args.background.desktop.src }}" media="(max-width: 1600px)">
+                <img  src="{{ args.background.desktop.src }}" alt="{{ args.background.alt }}">
+            </picture>
         </div>
     {% endif %}
     <div class="s-delivery__container">
@@ -17,11 +22,6 @@
             {% endif %}
             {% if args.list %}
                 <ul class="s-delivery__list">
-                    {% if args.circles %}
-                        <div class="s-delivery__list-circles">
-                            <img src="{{ args.circles.src }}" alt="{{ args.circles.alt }}">
-                        </div>
-                    {% endif %}
                     {% for item in args.list %}
                         <li class="s-delivery__item">
                             {% if item.svg or item.icon.src %}

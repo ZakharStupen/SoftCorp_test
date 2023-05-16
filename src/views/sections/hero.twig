@@ -2,7 +2,7 @@
     <div class="s-hero__container">
         <div class="s-hero__wrapper">
             {% if args.title %}
-                <h1 class="s-hero__title">
+                <h1 class="s-hero__title el-title">
                     {{ args.title }}
                 </h1>
             {% endif %}
@@ -22,9 +22,14 @@
                     {% endfor %}
                 </div>
             {% endif %}
-            {% if args.background.src %}
+            {% if args.background %}
                 <div class="s-hero__media">
-                    <img class="s-hero__img" src="{{ args.background.src }}" alt="{{ args.background.alt }}">
+                    <picture>
+                        <source srcset="{{ args.background.mobile.src }}" media="(max-width: 480px)">
+                        <source srcset="{{ args.background.tablet.src }}" media="(max-width: 1024px)">
+                        <source srcset="{{ args.background.desktop.src }}" media="(max-width: 1600px)">
+                        <img class="s-hero__img" src="{{ args.background.desktop.src }}" alt="{{ args.background.alt }}">
+                    </picture>
                 </div>
             {% endif %}
         </div>

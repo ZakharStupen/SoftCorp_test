@@ -14,7 +14,16 @@
     }
   ],
   "background": {
-    "src": "images/background.jpg",
+    "mobile": {
+      "src": "images/hero/background_mobile.jpg"
+    },
+    "tablet": {
+      "src": "images/hero/background_tablet.jpg"
+
+    },
+    "desktop": {
+      "src": "images/hero/background.jpg"
+    },
     "alt": "background"
   }
 }
