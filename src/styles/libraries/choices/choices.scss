@@ -32,12 +32,12 @@
         &__inner {
           background: rgba(61, 64, 80, 0.85);
           color: $c-white;
-          border: 1px solid #3D4050;
+          border: 1px solid $c-border;
         }
         &__list {
           padding: px-to-rem(2) px-to-rem(4) px-to-rem(3) 0;
           &::-webkit-scrollbar-track {
-            background-color: #3D4050;
+            background-color: $c-border;
             border-radius: px-to-rem(3);
           }
           &::-webkit-scrollbar {
@@ -46,13 +46,13 @@
           }
           &::-webkit-scrollbar-thumb {
             background: $c-brand;
-            height: 10px;
+            height: px-to-rem(10);
             border-radius: px-to-rem(3);
           }
           &--dropdown {
-            z-index: 5;
-            background-color: rgba(39, 39, 51, 1);
-            border-color:  #3D4050;
+            z-index: 11;
+            background-color:$c-dark;
+            border-color:  $c-border;
             border-bottom-left-radius: px-to-rem(3);
             border-bottom-right-radius: px-to-rem(3);
           }
@@ -81,7 +81,7 @@
   &.is-open {
     &:after {
       background-image: url("data:image/svg+xml,%3Csvg width='9' height='6' viewBox='0 0 9 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.93375 1.51079C8.93375 1.43936 8.89803 1.359 8.84446 1.30543L8.39803 0.859C8.34446 0.805429 8.2641 0.769714 8.19268 0.769714C8.12125 0.769714 8.04089 0.805429 7.98732 0.859L4.47839 4.36793L0.969462 0.859C0.91589 0.805429 0.835533 0.769714 0.764105 0.769714C0.683748 0.769714 0.612319 0.805429 0.558748 0.859L0.112319 1.30543C0.0587475 1.359 0.0230331 1.43936 0.0230331 1.51079C0.0230331 1.58221 0.0587475 1.66257 0.112319 1.71614L4.27303 5.87686C4.3266 5.93043 4.40696 5.96614 4.47839 5.96614C4.54982 5.96614 4.63018 5.93043 4.68375 5.87686L8.84446 1.71614C8.89803 1.66257 8.93375 1.58221 8.93375 1.51079Z' fill='white'/%3E%3C/svg%3E%0A");
-      margin-top: -2.5px;
+      margin-top: px-to-rem(-2.5);
       transform: rotate(180deg);
     }
   }

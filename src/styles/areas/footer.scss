@@ -1,5 +1,5 @@
 .footer {
-  background: #3D4050;
+  background: $c-border;
   &__container {
     @extend .l-container;
     padding-top: px-to-rem(32);

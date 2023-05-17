@@ -37,50 +37,7 @@
       color: $c-brand;
     }
 
-   /* &--btn {
-      color: $c-white;
-      background: $c-black;
-      margin-left: 0;
-      margin-right: 0;
-      padding: px-to-rem(5) px-to-rem(33);
-      border-radius: px-to-rem(10);
-      transition: background-color 0.3s ease, color 0.3s ease;
-      &:hover {
-        color: $c-white;
-        background: $c-black;
-        box-shadow: none;
-      }
-    }*/
   }
-
-  /*&__toggle {
-    display: none;
-    position: relative;
-    z-index: 3;
-    vertical-align: middle;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    font-size: px-to-rem(10);
-    padding: 1em;
-    margin-right: - .5em;
-    color: $c-white;
-    &:before {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 0;
-      height: 0;
-      top: .5em;
-      left: .5em;
-      border: .5em solid transparent;
-      border-top: 1em solid currentColor;
-      border-bottom: none;
-    }
-    &:hover {
-      color: $c-brand;
-    }
-  }*/
 
   &__submenu {
     margin: 0 0 0 px-to-rem(30);
@@ -189,9 +146,6 @@
         animation-duration: 0.2s;
         transform: translateY(10%);
         transition: opacity 0.3s ease, transform 0.3s ease;
-        //&.is-expanded {
-        //  display: block;
-        //}
 
         &-item {
           margin: 0;
@@ -202,7 +156,6 @@
       }
 
       &__item:hover &__submenu {
-        //display: block;
         animation-name: show-dropdown;
         transform: translateY(0);
         visibility: visible;

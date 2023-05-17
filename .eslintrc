@@ -1,3 +1,4 @@
+/*
 {
   "plugins": [
     "prettier"
@@ -21,3 +22,4 @@
     "operator-linebreak": ["error", "before"]
   }
 }
+*/

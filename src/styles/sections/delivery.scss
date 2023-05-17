@@ -23,7 +23,7 @@
     }
   }
   &__title {
-    @include fontSizeResponsive($fs-title-3);
+    @include fontSizeResponsive($fs-title-small);
     line-height: 1.2;
     font-weight: 800;
     color: $c-white;

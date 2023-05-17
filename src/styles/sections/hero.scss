@@ -10,6 +10,7 @@
   }
   &__description {
     margin-bottom: px-to-rem(40);
+    color: $c-white;
     p, b, span, ul, ol {
       @include fontSizeResponsive($fs-text);
       line-height: 1.2;
@@ -89,6 +90,7 @@
     }
     &__description {
       margin-bottom: px-to-rem(84);
+      color: $c-black;
     }
     &__links {
       gap: px-to-rem(30);
