@@ -2,7 +2,6 @@ export default class Form {
     constructor(container) {
         this.container = container;
         this.form =  this.container.querySelector('form');
-        console.log(this.form, 'this.form')
         if (this.form) {
             this.fileFields = Array.prototype.slice.call(this.form.querySelectorAll('[data-file]')).map(field => {
                 return {
@@ -41,7 +40,6 @@ export default class Form {
     initUploadField() {
         this.fileFields.forEach(field => {
             field.fileInput.addEventListener('change', () => {
-                console.log(field.wrap, 'field')
                 field.fileText.innerHTML = field.fileInput.files[0].name;
                 field.fileInput.hidden = 1;
                 setTimeout(() => {

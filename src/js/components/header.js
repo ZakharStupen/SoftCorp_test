@@ -54,14 +54,10 @@ export default class Header {
       this.container.querySelectorAll(this.schem.mainToggle),
     );
     this.mainToggles.forEach((switcher) => {
-      console.log('ssss');
       switcher.addEventListener('click', () => {
-        console.log('clic');
         if (this.state.menuOpen === false) {
-          console.log('op');
           this.openMenu();
         } else {
-          console.log('hi');
           this.closeMenu();
         }
       });
@@ -100,7 +96,6 @@ export default class Header {
     });
 
     document.addEventListener('click', (evt) => {
-      // console.log(this.state.expandedSublist);
       if (
         !!this.state.expandedSublist
           && evt.target !== this.state.expandedSublist.container
