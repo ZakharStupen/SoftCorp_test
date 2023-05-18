@@ -57,6 +57,9 @@
     "alt": "background_delivery"
   },
   "form": {
+    "action": "url",
+    "method": "post",
+    "id": "form",
     "select": {
       "name": "select",
       "id": "select",

@@ -48,7 +48,7 @@
             {% endif %}
         <div class="s-delivery__subscribe js-form">
             {% if args.form %}
-                <form class="s-delivery__form">
+                <form class="s-delivery__form" {% if args.form.id %} id="{{ args.form.id }}" {% endif %}  {% if args.form.action %} action="{{ args.form.action }}" {% endif %} {% if args.form.method %} method="{{ args.form.method }}" {% endif %}>
                     {% if args.form.select %}
                         <div class="s-delivery__field el-select" data-field>
                         <select class="el-select__field" id="{{ args.form.select.id }}"
